@@ -15,7 +15,7 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
 MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-MainFrame.Position = UDim2.new(0.762883186, 0, 0.829238355, 0)
+MainFrame.Position = UDim2.new(2, 0, 0.835243583, 05, 0)
 MainFrame.Size = UDim2.new(0, 313, 0, 100)
 
 UICorner.CornerRadius = UDim.new(0, 3)
@@ -46,6 +46,7 @@ Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.TextScaled = true
 Title.TextSize = 14.000
 Title.TextWrapped = true
+Title.Text = title
 
 Text.Name = "Text"
 Text.Parent = InnerFrame
@@ -58,6 +59,7 @@ Text.TextColor3 = Color3.fromRGB(255, 255, 255)
 Text.TextScaled = true
 Text.TextSize = 14.000
 Text.TextWrapped = true
+Text.Text = text
 
 wait(0.1)
 MainFrame:TweenPosition(UDim2.fromScale(0.83816427, 0.835243583))
