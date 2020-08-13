@@ -1,0 +1,69 @@
+function Notify(title, text, time)
+	
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local BackFrame2 = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local InnerFrame = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Text = Instance.new("TextLabel")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+MainFrame.Position = UDim2.new(0.762883186, 0, 0.829238355, 0)
+MainFrame.Size = UDim2.new(0, 313, 0, 100)
+
+UICorner.CornerRadius = UDim.new(0, 3)
+UICorner.Parent = MainFrame
+
+BackFrame2.Name = "BackFrame2"
+BackFrame2.Parent = MainFrame
+BackFrame2.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+BackFrame2.BorderSizePixel = 0
+BackFrame2.Size = UDim2.new(0, 163, 0, 100)
+
+UICorner_2.Parent = BackFrame2
+
+InnerFrame.Name = "InnerFrame"
+InnerFrame.Parent = MainFrame
+InnerFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+InnerFrame.Position = UDim2.new(0.0252872109, 0, 0.0676413178, 0)
+InnerFrame.Size = UDim2.new(0, 297, 0, 86)
+
+Title.Name = "Title"
+Title.Parent = InnerFrame
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.188552186, 0, 0, 0)
+Title.Size = UDim2.new(0, 200, 0, 44)
+Title.Font = Enum.Font.SourceSans
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+Text.Name = "Text"
+Text.Parent = InnerFrame
+Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text.BackgroundTransparency = 1.000
+Text.Position = UDim2.new(0.21548821, 0, 0.511627913, 0)
+Text.Size = UDim2.new(0, 183, 0, 36)
+Text.Font = Enum.Font.SourceSans
+Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text.TextScaled = true
+Text.TextSize = 14.000
+Text.TextWrapped = true
+
+wait(0.1)
+MainFrame:TweenPosition(UDim2.fromScale(0.83816427, 0.835243583))
+wait(time)
+MainFrame:TweenPosition(UDim2.fromScale(2, 0.835))
+wait(1)
+ScreenGui:Destroy()
+
+end
