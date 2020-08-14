@@ -93,8 +93,9 @@ Bar.Size = UDim2.new(0, 160, 0, 2)
 UICorner_2.CornerRadius = UDim.new(0, 3)
 UICorner_2.Parent = Bar
 
-local Lib:Toggle(name, callback)
+local Lib = {}
 
+function Lib:Toggle(name, callback)
 local UICorner_2 = Instance.new("UICorner")
 local Container = Instance.new("Frame")
 local UICorner_3 = Instance.new("UICorner")
