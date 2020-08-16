@@ -10,18 +10,11 @@ ScreenGui.Parent = game.CoreGui
 
 local Library = {}
 
-function Library:Tab()
+function Library:Main()
 local TopFrame = Instance.new("Frame")
 local MainFrame = Instance.new("Frame")
 local ScrollingFrame = Instance.new("ScrollingFrame")
-local Tab = Instance.new("TextButton")
-local TabBar = Instance.new("Frame")
-local UIListLayout = Instance.new("UIListLayout")
-local Hub = Instance.new("Frame")
-local ButtonContainer = Instance.new("Frame")
 local UIGridLayout = Instance.new("UIGridLayout")
-local HubBar2 = Instance.new("Frame")
-local HubBar = Instance.new("Frame")
 local Title = Instance.new("TextLabel")
 local Exit = Instance.new("TextButton")
 local UICorner = Instance.new("UICorner")
@@ -54,65 +47,6 @@ ScrollingFrame.Position = UDim2.new(0.0142857144, 0, 0.0362903215, 0)
 ScrollingFrame.Size = UDim2.new(0, 109, 0, 238)
 ScrollingFrame.CanvasSize = UDim2.new(0, 0, 10, 0)
 ScrollingFrame.ScrollBarThickness = 0
-
-Tab.Name = "Tab"
-Tab.Parent = ScrollingFrame
-Tab.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Tab.BorderColor3 = Color3.fromRGB(0, 170, 255)
-Tab.BorderSizePixel = 0
-Tab.Position = UDim2.new(0, 0, -1.28225125e-07, 0)
-Tab.Size = UDim2.new(0, 109, 0, 28)
-Tab.Font = Enum.Font.SourceSansSemibold
-Tab.Text = "Tab"
-Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
-Tab.TextSize = 20.000
-Tab.TextStrokeTransparency = 0.800
-
-TabBar.Name = "TabBar"
-TabBar.Parent = Tab
-TabBar.BackgroundColor3 = Color3.fromRGB(47, 158, 255)
-TabBar.Position = UDim2.new(-0.00917431153, 0, 1, 0)
-TabBar.Size = UDim2.new(0, 110, 0, 1)
-
-UIListLayout.Parent = ScrollingFrame
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0, 5)
-
-Hub.Name = "Hub"
-Hub.Parent = MainFrame
-Hub.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-Hub.BorderColor3 = Color3.fromRGB(47, 158, 255)
-Hub.BorderSizePixel = 0
-Hub.Position = UDim2.new(0.251020402, 0, 0.0362901986, 0)
-Hub.Size = UDim2.new(0, 359, 0, 231)
-
-ButtonContainer.Name = "ButtonContainer"
-ButtonContainer.Parent = Hub
-ButtonContainer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ButtonContainer.BackgroundTransparency = 1.000
-ButtonContainer.Position = UDim2.new(0.0222841222, 0, 0.0838097259, 0)
-ButtonContainer.Size = UDim2.new(0, 338, 0, 194)
-
-UIGridLayout.Parent = ButtonContainer
-UIGridLayout.FillDirection = Enum.FillDirection.Vertical
-UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellSize = UDim2.new(0, 109, 0, 28)
-
-HubBar2.Name = "HubBar2"
-HubBar2.Parent = MainFrame
-HubBar2.BackgroundColor3 = Color3.fromRGB(47, 158, 255)
-HubBar2.BorderColor3 = Color3.fromRGB(47, 158, 255)
-HubBar2.BorderSizePixel = 0
-HubBar2.Position = UDim2.new(0.267926782, 0, 0.926168084, 0)
-HubBar2.Size = UDim2.new(0, 338, 0, 3)
-
-HubBar.Name = "HubBar"
-HubBar.Parent = MainFrame
-HubBar.BackgroundColor3 = Color3.fromRGB(47, 158, 255)
-HubBar.BorderColor3 = Color3.fromRGB(47, 158, 255)
-HubBar.BorderSizePixel = 0
-HubBar.Position = UDim2.new(0.268000007, 0, 0.0700000003, 0)
-HubBar.Size = UDim2.new(0, 338, 0, 3)
 
 Title.Name = "Title"
 Title.Parent = TopFrame
@@ -304,6 +238,76 @@ TextButton.Text = name
 TextButton.MouseButton1Down:connect(function()
    callback() 
 end)
+end
+
+function Lib:Tab()
+    local Tab = Instance.new("TextButton")
+local TabBar = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local Hub = Instance.new("Frame")
+local ButtonContainer = Instance.new("Frame")
+local HubBar2 = Instance.new("Frame")
+local HubBar = Instance.new("Frame")
+
+Tab.Name = "Tab"
+Tab.Parent = ScrollingFrame
+Tab.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Tab.BorderColor3 = Color3.fromRGB(0, 170, 255)
+Tab.BorderSizePixel = 0
+Tab.Position = UDim2.new(0, 0, -1.28225125e-07, 0)
+Tab.Size = UDim2.new(0, 109, 0, 28)
+Tab.Font = Enum.Font.SourceSansSemibold
+Tab.Text = "Tab"
+Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tab.TextSize = 20.000
+Tab.TextStrokeTransparency = 0.800
+
+TabBar.Name = "TabBar"
+TabBar.Parent = Tab
+TabBar.BackgroundColor3 = Color3.fromRGB(47, 158, 255)
+TabBar.Position = UDim2.new(-0.00917431153, 0, 1, 0)
+TabBar.Size = UDim2.new(0, 110, 0, 1)
+
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 5)
+
+Hub.Name = "Hub"
+Hub.Parent = MainFrame
+Hub.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Hub.BorderColor3 = Color3.fromRGB(47, 158, 255)
+Hub.BorderSizePixel = 0
+Hub.Position = UDim2.new(0.251020402, 0, 0.0362901986, 0)
+Hub.Size = UDim2.new(0, 359, 0, 231)
+
+ButtonContainer.Name = "ButtonContainer"
+ButtonContainer.Parent = Hub
+ButtonContainer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ButtonContainer.BackgroundTransparency = 1.000
+ButtonContainer.Position = UDim2.new(0.0222841222, 0, 0.0838097259, 0)
+ButtonContainer.Size = UDim2.new(0, 338, 0, 194)
+
+UIGridLayout.Parent = ButtonContainer
+UIGridLayout.FillDirection = Enum.FillDirection.Vertical
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 109, 0, 28)
+
+HubBar2.Name = "HubBar2"
+HubBar2.Parent = MainFrame
+HubBar2.BackgroundColor3 = Color3.fromRGB(47, 158, 255)
+HubBar2.BorderColor3 = Color3.fromRGB(47, 158, 255)
+HubBar2.BorderSizePixel = 0
+HubBar2.Position = UDim2.new(0.267926782, 0, 0.926168084, 0)
+HubBar2.Size = UDim2.new(0, 338, 0, 3)
+
+HubBar.Name = "HubBar"
+HubBar.Parent = MainFrame
+HubBar.BackgroundColor3 = Color3.fromRGB(47, 158, 255)
+HubBar.BorderColor3 = Color3.fromRGB(47, 158, 255)
+HubBar.BorderSizePixel = 0
+HubBar.Position = UDim2.new(0.268000007, 0, 0.0700000003, 0)
+HubBar.Size = UDim2.new(0, 338, 0, 3)
+end
 end
 return Lib
 end
