@@ -1,0 +1,310 @@
+for _, v in pairs(game.CoreGui:GetChildren()) do
+	if v.Name == "ScreenGui" then
+		v:Destroy()
+	end
+end
+
+local ScreenGui = Instance.new("ScreenGui")
+
+ScreenGui.Parent = game.CoreGui
+
+local Library = {}
+
+function Library:Tab()
+local TopFrame = Instance.new("Frame")
+local MainFrame = Instance.new("Frame")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local Tab = Instance.new("TextButton")
+local TabBar = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local Hub = Instance.new("Frame")
+local ButtonContainer = Instance.new("Frame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local HubBar2 = Instance.new("Frame")
+local HubBar = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Exit = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local Minimize = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Bar = Instance.new("Frame")
+local Title2 = Instance.new("TextLabel")
+
+TopFrame.Name = "TopFrame"
+TopFrame.Parent = ScreenGui
+TopFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+TopFrame.BorderSizePixel = 0
+TopFrame.Position = UDim2.new(0.308856934, 0, 0.325552821, 0)
+TopFrame.Size = UDim2.new(0, 490, 0, 31)
+TopFrame.Active = true
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = TopFrame
+MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+MainFrame.BorderSizePixel = 0
+MainFrame.ClipsDescendants = true
+MainFrame.Position = UDim2.new(-0.000792503357, 0, 0.987321854, 0)
+MainFrame.Size = UDim2.new(0, 490, 0, 248)
+
+ScrollingFrame.Parent = MainFrame
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0.0142857144, 0, 0.0362903215, 0)
+ScrollingFrame.Size = UDim2.new(0, 109, 0, 238)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 10, 0)
+ScrollingFrame.ScrollBarThickness = 0
+
+Tab.Name = "Tab"
+Tab.Parent = ScrollingFrame
+Tab.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Tab.BorderColor3 = Color3.fromRGB(0, 170, 255)
+Tab.BorderSizePixel = 0
+Tab.Position = UDim2.new(0, 0, -1.28225125e-07, 0)
+Tab.Size = UDim2.new(0, 109, 0, 28)
+Tab.Font = Enum.Font.SourceSansSemibold
+Tab.Text = "Tab"
+Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tab.TextSize = 20.000
+Tab.TextStrokeTransparency = 0.800
+
+TabBar.Name = "TabBar"
+TabBar.Parent = Tab
+TabBar.BackgroundColor3 = Color3.fromRGB(47, 158, 255)
+TabBar.Position = UDim2.new(-0.00917431153, 0, 1, 0)
+TabBar.Size = UDim2.new(0, 110, 0, 1)
+
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 5)
+
+Hub.Name = "Hub"
+Hub.Parent = MainFrame
+Hub.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Hub.BorderColor3 = Color3.fromRGB(47, 158, 255)
+Hub.BorderSizePixel = 0
+Hub.Position = UDim2.new(0.251020402, 0, 0.0362901986, 0)
+Hub.Size = UDim2.new(0, 359, 0, 231)
+
+ButtonContainer.Name = "ButtonContainer"
+ButtonContainer.Parent = Hub
+ButtonContainer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ButtonContainer.BackgroundTransparency = 1.000
+ButtonContainer.Position = UDim2.new(0.0222841222, 0, 0.0838097259, 0)
+ButtonContainer.Size = UDim2.new(0, 338, 0, 194)
+
+UIGridLayout.Parent = ButtonContainer
+UIGridLayout.FillDirection = Enum.FillDirection.Vertical
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 109, 0, 28)
+
+HubBar2.Name = "HubBar2"
+HubBar2.Parent = MainFrame
+HubBar2.BackgroundColor3 = Color3.fromRGB(47, 158, 255)
+HubBar2.BorderColor3 = Color3.fromRGB(47, 158, 255)
+HubBar2.BorderSizePixel = 0
+HubBar2.Position = UDim2.new(0.267926782, 0, 0.926168084, 0)
+HubBar2.Size = UDim2.new(0, 338, 0, 3)
+
+HubBar.Name = "HubBar"
+HubBar.Parent = MainFrame
+HubBar.BackgroundColor3 = Color3.fromRGB(47, 158, 255)
+HubBar.BorderColor3 = Color3.fromRGB(47, 158, 255)
+HubBar.BorderSizePixel = 0
+HubBar.Position = UDim2.new(0.268000007, 0, 0.0700000003, 0)
+HubBar.Size = UDim2.new(0, 338, 0, 3)
+
+Title.Name = "Title"
+Title.Parent = TopFrame
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.0265306123, 0, 0, 0)
+Title.Size = UDim2.new(0, 82, 0, 31)
+Title.Font = Enum.Font.SourceSansSemibold
+Title.Text = "Neon Hub "
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextStrokeTransparency = 0.800
+Title.TextWrapped = true
+
+Exit.Name = "Exit"
+Exit.Parent = TopFrame
+Exit.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+Exit.BackgroundTransparency = 0.500
+Exit.Position = UDim2.new(0.93877548, 0, 0.193548441, 0)
+Exit.Size = UDim2.new(0, 22, 0, 19)
+Exit.Font = Enum.Font.SourceSans
+Exit.Text = ""
+Exit.TextColor3 = Color3.fromRGB(0, 0, 0)
+Exit.TextSize = 14.000
+
+UICorner.CornerRadius = UDim.new(0, 2000)
+UICorner.Parent = Exit
+
+Minimize.Name = "Minimize"
+Minimize.Parent = TopFrame
+Minimize.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+Minimize.BackgroundTransparency = 0.500
+Minimize.Position = UDim2.new(0.893877506, 0, 0.193548441, 0)
+Minimize.Size = UDim2.new(0, 22, 0, 19)
+Minimize.Font = Enum.Font.SourceSans
+Minimize.Text = ""
+Minimize.TextColor3 = Color3.fromRGB(0, 0, 0)
+Minimize.TextSize = 14.000
+
+UICorner_2.CornerRadius = UDim.new(0, 2000)
+UICorner_2.Parent = Minimize
+
+Bar.Name = "Bar"
+Bar.Parent = TopFrame
+Bar.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+Bar.BorderSizePixel = 0
+Bar.Position = UDim2.new(0, 0, 0.967741907, 0)
+Bar.Size = UDim2.new(0, 489, 0, 1)
+
+Title2.Name = "Title2"
+Title2.Parent = TopFrame
+Title2.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+Title2.BackgroundTransparency = 1.000
+Title2.Position = UDim2.new(0.193877563, 0, 0, 0)
+Title2.Size = UDim2.new(0, 82, 0, 31)
+Title2.Font = Enum.Font.SourceSans
+Title2.Text = "Exclusives"
+Title2.TextColor3 = Color3.fromRGB(0, 170, 255)
+Title2.TextScaled = true
+Title2.TextSize = 14.000
+Title2.TextStrokeTransparency = 0.800
+Title2.TextWrapped = true
+
+-- Scripts:
+
+local function RQMRGP_fake_script() -- Exit.Script 
+	local script = Instance.new('Script', Exit)
+
+	local E = script.Parent
+	
+	E.MouseButton1Click:Connect(function()
+		E.BackgroundTransparency = 0
+		wait(.3)
+		E.BackgroundTransparency = 0.5
+	end)
+end
+coroutine.wrap(RQMRGP_fake_script)()
+local function RRPS_fake_script() -- Exit.Script 
+	local script = Instance.new('Script', Exit)
+
+	local Main = script.Parent.Parent.MainFrame
+	local Top = script.Parent.Parent.Parent.TopFrame
+	local Mini = script.Parent.Parent.Minimize
+	local T = script.Parent.Parent.Title
+	local T2 = script.Parent.Parent.Title2
+	local Exit = script.Parent
+	
+	Exit.MouseButton1Click:Connect(function()
+		Main:TweenSize(UDim2.new(0, 490,0, 0), nil, nil, 0.5, nil)
+		wait()
+		Exit.Visible = false
+		Mini.Visible = false
+		T.Visible = false
+		T2.Visible = false
+		Top:TweenSize(UDim2.new(0, 490,0, 0), nil, nil, 0.5, nil)
+		wait(0.5)
+		Top.Visible = false
+	end)
+end
+coroutine.wrap(RRPS_fake_script)()
+local function ARCWS_fake_script() -- Minimize.Script 
+	local script = Instance.new('Script', Minimize)
+
+	local E = script.Parent
+	
+	E.MouseButton1Click:Connect(function()
+		E.BackgroundTransparency = 0
+		wait(.3)
+		E.BackgroundTransparency = 0.5
+	end)
+end
+coroutine.wrap(ARCWS_fake_script)()
+local function BPPFT_fake_script() -- Minimize.Script 
+	local script = Instance.new('Script', Minimize)
+
+	local Main = script.Parent.Parent.MainFrame
+	local Mini = script.Parent
+	local Toggle = false
+	
+	Mini.MouseButton1Click:Connect(function()
+		if Toggle == false then
+			Main:TweenSize(UDim2.new(0, 490,0, 0), nil, nil, 0.3, nil)
+			Toggle = true
+		else
+			Main:TweenSize(UDim2.new(0, 490,0, 248), nil, nil, 0.3, nil)
+			Toggle = false
+		end
+	end)
+end
+coroutine.wrap(BPPFT_fake_script)()
+
+function dragify(Frame)
+dragToggle = nil
+dragSpeed = .25 -- You can edit this.
+dragInput = nil
+dragStart = nil
+dragPos = nil
+
+function updateInput(input)
+Delta = input.Position - dragStart
+Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+game:GetService("TweenService"):Create(Frame, TweenInfo.new(.25), {Position = Position}):Play()
+end
+
+Frame.InputBegan:Connect(function(input)
+if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+dragToggle = true
+dragStart = input.Position
+startPos = Frame.Position
+input.Changed:Connect(function()
+if (input.UserInputState == Enum.UserInputState.End) then
+dragToggle = false
+end
+end)
+end
+end)
+
+Frame.InputChanged:Connect(function(input)
+if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+dragInput = input
+end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+if (input == dragInput and dragToggle) then
+updateInput(input)
+end
+end)
+end
+
+dragify(TopFrame)
+
+local Lib = {}
+
+function Lib:Button(name, callback)
+local TextButton = Instance.new("TextButton")
+
+TextButton.Parent = ButtonContainer
+TextButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TextButton.BorderColor3 = Color3.fromRGB(25, 86, 136)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.0250696372, 0, 0.0952381045, 0)
+TextButton.Size = UDim2.new(0, 132, 0, 33)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 20.000
+TextButton.Text = name
+TextButton.MouseButton1Down:connect(function()
+   callback() 
+end)
+end
+return Lib
+end
+return Library
