@@ -1,0 +1,942 @@
+if game.CoreGui:FindFirstChild("ScreenGui") then
+    game.CoreGui:FindFirstChild("ScreenGui"):Destroy()
+end
+
+localplyer = game.Players.LocalPlayer.Name
+local ScreenGui = Instance.new("ScreenGui")
+local TopFrame = Instance.new("Frame")
+local MainFrame = Instance.new("Frame")
+local TabFrame = Instance.new("ScrollingFrame")
+local Home = Instance.new("TextButton")
+local HomeBar = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local Items = Instance.new("TextButton")
+local ItemsBar = Instance.new("Frame")
+local Player = Instance.new("TextButton")
+local PlayerBar = Instance.new("Frame")
+local Tps = Instance.new("TextButton")
+local HomeBar_2 = Instance.new("Frame")
+local HomeHub = Instance.new("Frame")
+local Credits = Instance.new("TextLabel")
+local CreditsName = Instance.new("TextLabel")
+local Bar = Instance.new("Frame")
+local Bar2 = Instance.new("Frame")
+local HomeAni = Instance.new("Frame")
+local ItemsAni = Instance.new("Frame")
+local PlayerAni = Instance.new("Frame")
+local ItemsHub = Instance.new("Frame")
+local ItemScroll = Instance.new("ScrollingFrame")
+local Apple = Instance.new("TextButton")
+local BloxyCola = Instance.new("TextButton")
+local Planks = Instance.new("TextButton")
+local Cookie = Instance.new("TextButton")
+local Vault = Instance.new("TextButton")
+local AppleToggle = Instance.new("Frame")
+local AppleName = Instance.new("TextLabel")
+local AppleButton = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local ColaToggle = Instance.new("Frame")
+local ColaName = Instance.new("TextLabel")
+local ColaButton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local AppleToggle_2 = Instance.new("Frame")
+local CookieName = Instance.new("TextLabel")
+local CookieButton = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local AppleToggle_3 = Instance.new("Frame")
+local PlankName = Instance.new("TextLabel")
+local PlanksButton = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local PlayerHub = Instance.new("Frame")
+local GodToggle = Instance.new("Frame")
+local GodName = Instance.new("TextLabel")
+local GodButton = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local TpHub = Instance.new("Frame")
+local TpScroll = Instance.new("ScrollingFrame")
+local House = Instance.new("TextButton")
+local Basement = Instance.new("TextButton")
+local Attic = Instance.new("TextButton")
+local Store = Instance.new("TextButton")
+local SewerDrain = Instance.new("TextButton")
+local BossRoom = Instance.new("TextButton")
+local TpAni = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Title2 = Instance.new("TextLabel")
+local Exit = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local Minimize = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+TopFrame.Name = "TopFrame"
+TopFrame.Parent = ScreenGui
+TopFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+TopFrame.BorderSizePixel = 0
+TopFrame.Position = UDim2.new(0.339137018, 0, 0.356265306, 0)
+TopFrame.Size = UDim2.new(0, 425, 0, 32)
+TopFrame.Active = true
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = TopFrame
+MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+MainFrame.BorderSizePixel = 0
+MainFrame.ClipsDescendants = true
+MainFrame.Position = UDim2.new(0, 0, 0.974054337, 0)
+MainFrame.Size = UDim2.new(0, 425, 0, 215)
+
+TabFrame.Name = "TabFrame"
+TabFrame.Parent = MainFrame
+TabFrame.Active = true
+TabFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TabFrame.BorderSizePixel = 0
+TabFrame.Position = UDim2.new(0.0188235287, 0, 0.0465116277, 0)
+TabFrame.Size = UDim2.new(0, 100, 0, 204)
+TabFrame.ScrollBarThickness = 0
+
+Home.Name = "Home"
+Home.Parent = TabFrame
+Home.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Home.BorderSizePixel = 0
+Home.Size = UDim2.new(0, 100, 0, 29)
+Home.Font = Enum.Font.SourceSans
+Home.Text = "Home"
+Home.TextColor3 = Color3.fromRGB(255, 255, 255)
+Home.TextSize = 20.000
+
+HomeBar.Name = "HomeBar"
+HomeBar.Parent = Home
+HomeBar.BackgroundColor3 = Color3.fromRGB(170, 85, 255)
+HomeBar.Position = UDim2.new(0, 0, 1, 0)
+HomeBar.Size = UDim2.new(0, 100, 0, 2)
+
+UIListLayout.Parent = TabFrame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 8)
+
+Items.Name = "Items"
+Items.Parent = TabFrame
+Items.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Items.BorderSizePixel = 0
+Items.Size = UDim2.new(0, 100, 0, 29)
+Items.Font = Enum.Font.SourceSans
+Items.Text = "Items"
+Items.TextColor3 = Color3.fromRGB(255, 255, 255)
+Items.TextSize = 20.000
+
+ItemsBar.Name = "ItemsBar"
+ItemsBar.Parent = Items
+ItemsBar.BackgroundColor3 = Color3.fromRGB(170, 85, 255)
+ItemsBar.Position = UDim2.new(0, 0, 1, 0)
+ItemsBar.Size = UDim2.new(0, 100, 0, 2)
+
+Player.Name = "Player"
+Player.Parent = TabFrame
+Player.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Player.BorderSizePixel = 0
+Player.Size = UDim2.new(0, 100, 0, 29)
+Player.Font = Enum.Font.SourceSans
+Player.Text = "Player"
+Player.TextColor3 = Color3.fromRGB(255, 255, 255)
+Player.TextSize = 20.000
+
+PlayerBar.Name = "PlayerBar"
+PlayerBar.Parent = Player
+PlayerBar.BackgroundColor3 = Color3.fromRGB(170, 85, 255)
+PlayerBar.Position = UDim2.new(0, 0, 1, 0)
+PlayerBar.Size = UDim2.new(0, 100, 0, 2)
+
+Tps.Name = "Tps"
+Tps.Parent = TabFrame
+Tps.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Tps.BorderSizePixel = 0
+Tps.Size = UDim2.new(0, 100, 0, 29)
+Tps.Font = Enum.Font.SourceSans
+Tps.Text = "Teleports"
+Tps.TextColor3 = Color3.fromRGB(255, 255, 255)
+Tps.TextSize = 20.000
+
+HomeBar_2.Name = "HomeBar"
+HomeBar_2.Parent = Tps
+HomeBar_2.BackgroundColor3 = Color3.fromRGB(170, 85, 255)
+HomeBar_2.Position = UDim2.new(0, 0, 1, 0)
+HomeBar_2.Size = UDim2.new(0, 100, 0, 2)
+
+HomeHub.Name = "HomeHub"
+HomeHub.Parent = MainFrame
+HomeHub.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+HomeHub.BorderColor3 = Color3.fromRGB(102, 4, 86)
+HomeHub.BorderSizePixel = 0
+HomeHub.Position = UDim2.new(0.268235296, 0, 0.0465116277, 0)
+HomeHub.Size = UDim2.new(0, 301, 0, 197)
+
+Credits.Name = "Credits"
+Credits.Parent = HomeHub
+Credits.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credits.BackgroundTransparency = 1.000
+Credits.Position = UDim2.new(0.166112959, 0, 0.284263968, 0)
+Credits.Size = UDim2.new(0, 200, 0, 50)
+Credits.Font = Enum.Font.SourceSans
+Credits.Text = "Break-In Gui"
+Credits.TextColor3 = Color3.fromRGB(170, 85, 255)
+Credits.TextScaled = true
+Credits.TextSize = 14.000
+Credits.TextWrapped = true
+
+CreditsName.Name = "CreditsName"
+CreditsName.Parent = HomeHub
+CreditsName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CreditsName.BackgroundTransparency = 1.000
+CreditsName.Position = UDim2.new(0.24584718, 0, 0.538071036, 0)
+CreditsName.Size = UDim2.new(0, 165, 0, 31)
+CreditsName.Font = Enum.Font.SourceSans
+CreditsName.Text = "By Devonte"
+CreditsName.TextColor3 = Color3.fromRGB(255, 255, 255)
+CreditsName.TextScaled = true
+CreditsName.TextSize = 14.000
+CreditsName.TextWrapped = true
+
+Bar.Name = "Bar"
+Bar.Parent = HomeHub
+Bar.BackgroundColor3 = Color3.fromRGB(170, 85, 255)
+Bar.Position = UDim2.new(0.0465116277, 0, 0.0812182724, 0)
+Bar.Size = UDim2.new(0, 275, 0, 5)
+
+Bar2.Name = "Bar2"
+Bar2.Parent = HomeHub
+Bar2.BackgroundColor3 = Color3.fromRGB(170, 85, 255)
+Bar2.Position = UDim2.new(0.0465116277, 0, 0.893401027, 0)
+Bar2.Size = UDim2.new(0, 275, 0, 5)
+
+HomeAni.Name = "HomeAni"
+HomeAni.Parent = MainFrame
+HomeAni.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+HomeAni.BorderSizePixel = 0
+HomeAni.Position = UDim2.new(0.268235296, 0, 0.0465116277, 0)
+HomeAni.Size = UDim2.new(0, 0, 0, 196)
+
+ItemsAni.Name = "ItemsAni"
+ItemsAni.Parent = MainFrame
+ItemsAni.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ItemsAni.BorderSizePixel = 0
+ItemsAni.Position = UDim2.new(0.268235296, 0, 0.0465116277, 0)
+ItemsAni.Size = UDim2.new(0, 301, 0, 0)
+
+PlayerAni.Name = "PlayerAni"
+PlayerAni.Parent = MainFrame
+PlayerAni.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+PlayerAni.BorderSizePixel = 0
+PlayerAni.Position = UDim2.new(0.97647059, 0, 0.0465116277, 0)
+PlayerAni.Size = UDim2.new(0, 0, 0, 195)
+
+ItemsHub.Name = "ItemsHub"
+ItemsHub.Parent = MainFrame
+ItemsHub.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+ItemsHub.BorderSizePixel = 0
+ItemsHub.Position = UDim2.new(0.268000007, 0, 0.0469999984, 0)
+ItemsHub.Size = UDim2.new(0, 301, 0, 197)
+ItemsHub.Visible = false
+
+ItemScroll.Name = "ItemScroll"
+ItemScroll.Parent = ItemsHub
+ItemScroll.Active = true
+ItemScroll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ItemScroll.BackgroundTransparency = 1.000
+ItemScroll.Position = UDim2.new(0, 0, 0.00507614203, 0)
+ItemScroll.Size = UDim2.new(0, 301, 0, 196)
+ItemScroll.ScrollBarThickness = 0
+
+Apple.Name = "Apple"
+Apple.Parent = ItemScroll
+Apple.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Apple.BorderSizePixel = 0
+Apple.Position = UDim2.new(0.0465116277, 0, 0.0308194384, 0)
+Apple.Size = UDim2.new(0, 111, 0, 32)
+Apple.Font = Enum.Font.SourceSans
+Apple.Text = "Apple"
+Apple.TextColor3 = Color3.fromRGB(255, 255, 255)
+Apple.TextSize = 20.000
+Apple.MouseButton1Click:Connect(function()
+   game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Apple") 
+end)
+
+BloxyCola.Name = "BloxyCola"
+BloxyCola.Parent = ItemScroll
+BloxyCola.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+BloxyCola.BorderSizePixel = 0
+BloxyCola.Position = UDim2.new(0.0465116277, 0, 0.147570699, 0)
+BloxyCola.Size = UDim2.new(0, 111, 0, 32)
+BloxyCola.Font = Enum.Font.SourceSans
+BloxyCola.Text = "Bloxy Cola"
+BloxyCola.TextColor3 = Color3.fromRGB(255, 255, 255)
+BloxyCola.TextSize = 20.000
+BloxyCola.MouseButton1Click:Connect(function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("BloxyCola")
+end)
+
+Planks.Name = "Planks"
+Planks.Parent = ItemScroll
+Planks.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Planks.BorderSizePixel = 0
+Planks.Position = UDim2.new(0.0465116277, 0, 0.256707758, 0)
+Planks.Size = UDim2.new(0, 111, 0, 32)
+Planks.Font = Enum.Font.SourceSans
+Planks.Text = "Planks"
+Planks.TextColor3 = Color3.fromRGB(255, 255, 255)
+Planks.TextSize = 20.000
+Planks.MouseButton1Click:Connect(function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Plank")
+end)
+
+Cookie.Name = "Cookie"
+Cookie.Parent = ItemScroll
+Cookie.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Cookie.BorderSizePixel = 0
+Cookie.Position = UDim2.new(0.0465116277, 0, 0.360768676, 0)
+Cookie.Size = UDim2.new(0, 111, 0, 32)
+Cookie.Font = Enum.Font.SourceSans
+Cookie.Text = "Cookie"
+Cookie.TextColor3 = Color3.fromRGB(255, 255, 255)
+Cookie.TextSize = 20.000
+Cookie.MouseButton1Click:Connect(function()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Cookie")
+end)
+
+Vault.Parent = ItemScroll
+Vault.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Vault.BorderSizePixel = 0
+Vault.Position = UDim2.new(0.0465116277, 0, 0.474981874, 0)
+Vault.Size = UDim2.new(0, 111, 0, 32)
+Vault.Font = Enum.Font.SourceSans
+Vault.Text = "Valut Code"
+Vault.TextColor3 = Color3.fromRGB(255, 255, 255)
+Vault.TextSize = 20.000
+Vault.MouseButton1Click:Connect(function()
+    game.workspace.CodeNote.CFrame = game.workspace[localplyer].HumanoidRootPart.CFrame
+end)
+
+AppleToggle.Name = "AppleToggle"
+AppleToggle.Parent = ItemScroll
+AppleToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+AppleToggle.BorderSizePixel = 0
+AppleToggle.Position = UDim2.new(0.501661122, 0, 0.0300076287, 0)
+AppleToggle.Size = UDim2.new(0, 114, 0, 30)
+
+AppleName.Name = "AppleName"
+AppleName.Parent = AppleToggle
+AppleName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AppleName.BackgroundTransparency = 1.000
+AppleName.Position = UDim2.new(0.0526315793, 0, 0, 0)
+AppleName.Size = UDim2.new(0, 82, 0, 30)
+AppleName.Font = Enum.Font.SourceSans
+AppleName.Text = "Apple"
+AppleName.TextColor3 = Color3.fromRGB(255, 255, 255)
+AppleName.TextSize = 20.000
+
+AppleTog = false
+AppleButton.Name = "AppleButton"
+AppleButton.Parent = AppleToggle
+AppleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AppleButton.Position = UDim2.new(0.719298244, 0, 0.166666672, 0)
+AppleButton.Size = UDim2.new(0, 24, 0, 20)
+AppleButton.Font = Enum.Font.SourceSans
+AppleButton.Text = ""
+AppleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+AppleButton.TextSize = 14.000
+AppleButton.MouseButton1Click:Connect(function()
+   AppleTog = not AppleTog
+   while AppleTog do
+    wait()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Apple")
+    end
+end)
+
+UICorner.CornerRadius = UDim.new(0, 5)
+UICorner.Parent = AppleButton
+
+ColaToggle.Name = "ColaToggle"
+ColaToggle.Parent = ItemScroll
+ColaToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ColaToggle.BorderSizePixel = 0
+ColaToggle.Position = UDim2.new(0.501661122, 0, 0.146758899, 0)
+ColaToggle.Size = UDim2.new(0, 114, 0, 30)
+
+ColaName.Name = "ColaName"
+ColaName.Parent = ColaToggle
+ColaName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ColaName.BackgroundTransparency = 1.000
+ColaName.Size = UDim2.new(0, 82, 0, 30)
+ColaName.Font = Enum.Font.SourceSans
+ColaName.Text = "Bloxy Cola"
+ColaName.TextColor3 = Color3.fromRGB(255, 255, 255)
+ColaName.TextSize = 20.000
+
+Colas = false
+ColaButton.Name = "ColaButton"
+ColaButton.Parent = ColaToggle
+ColaButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ColaButton.Position = UDim2.new(0.719298244, 0, 0.166666672, 0)
+ColaButton.Size = UDim2.new(0, 24, 0, 20)
+ColaButton.Font = Enum.Font.SourceSans
+ColaButton.Text = ""
+ColaButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+ColaButton.TextSize = 14.000
+ColaButton.MouseButton1Click:Connect(function()
+    Colas = not Colas
+    while Colas do
+        wait()
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("BloxyCola")
+    end
+end)
+
+UICorner_2.CornerRadius = UDim.new(0, 5)
+UICorner_2.Parent = ColaButton
+
+AppleToggle_2.Name = "AppleToggle"
+AppleToggle_2.Parent = ItemScroll
+AppleToggle_2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+AppleToggle_2.BorderSizePixel = 0
+AppleToggle_2.Position = UDim2.new(0.501661122, 0, 0.359956861, 0)
+AppleToggle_2.Size = UDim2.new(0, 114, 0, 30)
+
+CookieName.Name = "CookieName"
+CookieName.Parent = AppleToggle_2
+CookieName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CookieName.BackgroundTransparency = 1.000
+CookieName.Position = UDim2.new(0.0526315793, 0, 0, 0)
+CookieName.Size = UDim2.new(0, 82, 0, 30)
+CookieName.Font = Enum.Font.SourceSans
+CookieName.Text = "Cookie"
+CookieName.TextColor3 = Color3.fromRGB(255, 255, 255)
+CookieName.TextSize = 20.000
+
+Cook = false
+CookieButton.Name = "CookieButton"
+CookieButton.Parent = AppleToggle_2
+CookieButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CookieButton.Position = UDim2.new(0.719298244, 0, 0.166666672, 0)
+CookieButton.Size = UDim2.new(0, 24, 0, 20)
+CookieButton.Font = Enum.Font.SourceSans
+CookieButton.Text = ""
+CookieButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+CookieButton.TextSize = 14.000
+CookieButton.MouseButton1Click:Connect(function()
+    Cook = not Cook
+    while Cook do
+        wait()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Cookie")
+    end
+end)
+
+UICorner_3.CornerRadius = UDim.new(0, 5)
+UICorner_3.Parent = CookieButton
+
+AppleToggle_3.Name = "AppleToggle"
+AppleToggle_3.Parent = ItemScroll
+AppleToggle_3.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+AppleToggle_3.BorderSizePixel = 0
+AppleToggle_3.Position = UDim2.new(0.501661122, 0, 0.255895942, 0)
+AppleToggle_3.Size = UDim2.new(0, 114, 0, 30)
+
+PlankName.Name = "PlankName"
+PlankName.Parent = AppleToggle_3
+PlankName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlankName.BackgroundTransparency = 1.000
+PlankName.Position = UDim2.new(0.0526315793, 0, 0, 0)
+PlankName.Size = UDim2.new(0, 82, 0, 30)
+PlankName.Font = Enum.Font.SourceSans
+PlankName.Text = "Planks"
+PlankName.TextColor3 = Color3.fromRGB(255, 255, 255)
+PlankName.TextSize = 20.000
+
+Plank = false
+PlanksButton.Name = "PlanksButton"
+PlanksButton.Parent = AppleToggle_3
+PlanksButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PlanksButton.Position = UDim2.new(0.719298244, 0, 0.166666672, 0)
+PlanksButton.Size = UDim2.new(0, 24, 0, 20)
+PlanksButton.Font = Enum.Font.SourceSans
+PlanksButton.Text = ""
+PlanksButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+PlanksButton.TextSize = 14.000
+PlanksButton.MouseButton1Click:Connect(function()
+    Plank = not Plank
+    while Plank do
+        wait()
+    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Plank")
+    end
+end)
+
+UICorner_4.CornerRadius = UDim.new(0, 5)
+UICorner_4.Parent = PlanksButton
+
+PlayerHub.Name = "PlayerHub"
+PlayerHub.Parent = MainFrame
+PlayerHub.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+PlayerHub.BorderSizePixel = 0
+PlayerHub.Position = UDim2.new(0.268000007, 0, 0.0469999984, 0)
+PlayerHub.Size = UDim2.new(0, 301, 0, 197)
+PlayerHub.Visible = false
+
+GodToggle.Name = "GodToggle"
+GodToggle.Parent = PlayerHub
+GodToggle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+GodToggle.BorderSizePixel = 0
+GodToggle.Position = UDim2.new(0.0265780725, 0, 0.0300076287, 0)
+GodToggle.Size = UDim2.new(0, 114, 0, 30)
+
+GodName.Name = "GodName"
+GodName.Parent = GodToggle
+GodName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GodName.BackgroundTransparency = 1.000
+GodName.Size = UDim2.new(0, 82, 0, 30)
+GodName.Font = Enum.Font.SourceSans
+GodName.Text = "GodMode"
+GodName.TextColor3 = Color3.fromRGB(255, 255, 255)
+GodName.TextSize = 20.000
+
+God = false
+GodButton.Name = "GodButton"
+GodButton.Parent = GodToggle
+GodButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GodButton.Position = UDim2.new(0.719298244, 0, 0.166666672, 0)
+GodButton.Size = UDim2.new(0, 24, 0, 20)
+GodButton.Font = Enum.Font.SourceSans
+GodButton.Text = ""
+GodButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+GodButton.TextSize = 14.000
+GodButton.MouseButton1Click:Connect(function()
+    God  = not God
+    while God do
+        wait()
+ game:GetService("ReplicatedStorage").RemoteEvents.GiveTool:FireServer("BloxyCola")
+ wait()
+ local args = {
+     [1] = 15,
+     [2] = "BloxyCola",
+ }
+ 
+ game:GetService("ReplicatedStorage").RemoteEvents.Energy:FireServer(unpack(args))
+    end
+end)
+
+UICorner_5.CornerRadius = UDim.new(0, 5)
+UICorner_5.Parent = GodButton
+
+TpHub.Name = "TpHub"
+TpHub.Parent = MainFrame
+TpHub.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+TpHub.BorderSizePixel = 0
+TpHub.Position = UDim2.new(0.268235296, 0, 0.041860465, 0)
+TpHub.Size = UDim2.new(0, 301, 0, 197)
+TpHub.Visible = false
+
+TpScroll.Name = "TpScroll"
+TpScroll.Parent = TpHub
+TpScroll.Active = true
+TpScroll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TpScroll.BackgroundTransparency = 1.000
+TpScroll.Size = UDim2.new(0, 301, 0, 196)
+TpScroll.ScrollBarThickness = 0
+
+House.Name = "House"
+House.Parent = TpScroll
+House.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+House.BorderSizePixel = 0
+House.Position = UDim2.new(0.0465116277, 0, 0.0308194384, 0)
+House.Size = UDim2.new(0, 111, 0, 32)
+House.Font = Enum.Font.SourceSans
+House.Text = "House"
+House.TextColor3 = Color3.fromRGB(255, 255, 255)
+House.TextSize = 20.000
+House.MouseButton1Click:Connect(function()
+    game.workspace[localplyer].HumanoidRootPart.CFrame = CFrame.new(-36, 3, -200)
+end)
+
+Basement.Name = "Basement"
+Basement.Parent = TpScroll
+Basement.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Basement.BorderSizePixel = 0
+Basement.Position = UDim2.new(0.0465116277, 0, 0.15264684, 0)
+Basement.Size = UDim2.new(0, 111, 0, 32)
+Basement.Font = Enum.Font.SourceSans
+Basement.Text = "Basement"
+Basement.TextColor3 = Color3.fromRGB(255, 255, 255)
+Basement.TextSize = 20.000
+Basement.MouseButton1Down:connect(function()
+    game.workspace[localplyer].HumanoidRootPart.CFrame = CFrame.new(71, -15, -163) -- Basement
+end)
+
+Attic.Name = "Attic"
+Attic.Parent = TpScroll
+Attic.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Attic.BorderSizePixel = 0
+Attic.Position = UDim2.new(0.0465116277, 0, 0.282088459, 0)
+Attic.Size = UDim2.new(0, 111, 0, 32)
+Attic.Font = Enum.Font.SourceSans
+Attic.Text = "Attic"
+Attic.TextColor3 = Color3.fromRGB(255, 255, 255)
+Attic.TextSize = 20.000
+Attic.MouseButton1Down:connect(function()
+    game.workspace[localplyer].HumanoidRootPart.CFrame = CFrame.new(-16, 35, -220)
+end)
+
+Store.Name = "Store"
+Store.Parent = TpScroll
+Store.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Store.BorderSizePixel = 0
+Store.Position = UDim2.new(0.0465116277, 0, 0.414068162, 0)
+Store.Size = UDim2.new(0, 111, 0, 32)
+Store.Font = Enum.Font.SourceSans
+Store.Text = "Store"
+Store.TextColor3 = Color3.fromRGB(255, 255, 255)
+Store.TextSize = 20.000
+Store.MouseButton1Down:connect(function()
+    game.workspace[localplyer].HumanoidRootPart.CFrame = CFrame.new(-422, 3, -121)
+end)
+
+SewerDrain.Name = "SewerDrain"
+SewerDrain.Parent = TpScroll
+SewerDrain.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+SewerDrain.BorderSizePixel = 0
+SewerDrain.Position = UDim2.new(0.0465116277, 0, 0.523205221, 0)
+SewerDrain.Size = UDim2.new(0, 111, 0, 32)
+SewerDrain.Font = Enum.Font.SourceSans
+SewerDrain.Text = "SewerDrain"
+SewerDrain.TextColor3 = Color3.fromRGB(255, 255, 255)
+SewerDrain.TextSize = 20.000
+SewerDrain.MouseButton1Down:connect(function()
+    game.workspace[localplyer].HumanoidRootPart.CFrame = CFrame.new(129, 3, -125) -- Sewer Lid
+end)
+
+BossRoom.Name = "BossRoom"
+BossRoom.Parent = TpScroll
+BossRoom.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+BossRoom.BorderSizePixel = 0
+BossRoom.Position = UDim2.new(0.0465116277, 0, 0.642494559, 0)
+BossRoom.Size = UDim2.new(0, 111, 0, 32)
+BossRoom.Font = Enum.Font.SourceSans
+BossRoom.Text = "BossRoom"
+BossRoom.TextColor3 = Color3.fromRGB(255, 255, 255)
+BossRoom.TextSize = 20.000
+BossRoom.MouseButton1Click:Connect(function()
+    game.workspace[localplyer].HumanoidRootPart.CFrame = CFrame.new(-39, -287, -1480)
+end)
+
+TpAni.Name = "TpAni"
+TpAni.Parent = MainFrame
+TpAni.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TpAni.BorderSizePixel = 0
+TpAni.Position = UDim2.new(0.270588219, 0, 0.962790728, 0)
+TpAni.Size = UDim2.new(0, 301, 0, 0)
+
+Title.Name = "Title"
+Title.Parent = TopFrame
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(-0.0235294122, 0, 0.125, 0)
+Title.Size = UDim2.new(0, 97, 0, 24)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Break"
+Title.TextColor3 = Color3.fromRGB(170, 85, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextStrokeColor3 = Color3.fromRGB(170, 85, 255)
+Title.TextStrokeTransparency = 0.800
+Title.TextWrapped = true
+
+Title2.Name = "Title2"
+Title2.Parent = TopFrame
+Title2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title2.BackgroundTransparency = 1.000
+Title2.Position = UDim2.new(0.0894117653, 0, 0.125, 0)
+Title2.Size = UDim2.new(0, 76, 0, 24)
+Title2.Font = Enum.Font.SourceSans
+Title2.Text = "-In"
+Title2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title2.TextScaled = true
+Title2.TextSize = 14.000
+Title2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Title2.TextStrokeTransparency = 0.800
+Title2.TextWrapped = true
+
+Exit.Name = "Exit"
+Exit.Parent = TopFrame
+Exit.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+Exit.Position = UDim2.new(0.934117675, 0, 0.25, 0)
+Exit.Size = UDim2.new(0, 18, 0, 16)
+Exit.Font = Enum.Font.SourceSans
+Exit.Text = ""
+Exit.TextColor3 = Color3.fromRGB(0, 0, 0)
+Exit.TextSize = 14.000
+
+UICorner_6.Parent = Exit
+
+Minimize.Name = "Minimize"
+Minimize.Parent = TopFrame
+Minimize.BackgroundColor3 = Color3.fromRGB(255, 247, 0)
+Minimize.Position = UDim2.new(0.89176476, 0, 0.25, 0)
+Minimize.Size = UDim2.new(0, 18, 0, 16)
+Minimize.Font = Enum.Font.SourceSans
+Minimize.Text = ""
+Minimize.TextColor3 = Color3.fromRGB(0, 0, 0)
+Minimize.TextSize = 14.000
+
+UICorner_7.Parent = Minimize
+
+-- Scripts:
+
+local function PUEJKU_fake_script() -- Home.Script 
+	local script = Instance.new('Script', Home)
+
+	local Home = script.Parent
+	local Ani = script.Parent.Parent.Parent.HomeAni
+	local HomeHub = script.Parent.Parent.Parent.HomeHub
+	local ItemHub = script.Parent.Parent.Parent.ItemsHub
+	local PlayerHub = script.Parent.Parent.Parent.PlayerHub
+	local TpHub = script.Parent.Parent.Parent.TpHub
+	
+	Home.MouseButton1Click:Connect(function()
+		Ani:TweenSize(UDim2.new(0, 301,0, 196), nil, nil, 0.2, nil)
+		wait(0.3)
+		HomeHub.Visible = true
+		ItemHub.Visible = false
+		PlayerHub.Visible = false
+		TpHub.Visible = false
+		Ani:TweenSize(UDim2.new(0, 0,0, 196), nil, nil, 0.2, nil)
+	end)
+end
+coroutine.wrap(PUEJKU_fake_script)()
+local function AGLG_fake_script() -- Items.Script 
+	local script = Instance.new('Script', Items)
+
+	local Items = script.Parent
+	local Ani = script.Parent.Parent.Parent.ItemsAni
+	local HomeHub = script.Parent.Parent.Parent.HomeHub
+	local ItemHub = script.Parent.Parent.Parent.ItemsHub
+	local PlayerHub = script.Parent.Parent.Parent.PlayerHub
+	local TpHub = script.Parent.Parent.Parent.TpHub
+	
+	Items.MouseButton1Click:Connect(function()
+		Ani:TweenSize(UDim2.new(0, 301,0, 196), nil, nil, 0.2, nil)
+		wait(0.3)
+		HomeHub.Visible = false
+		ItemHub.Visible = true
+		PlayerHub.Visible = false
+		TpHub.Visible = false
+		Ani:TweenSize(UDim2.new(0, 301,0, 0), nil, nil, 0.2, nil)
+	end)
+end
+coroutine.wrap(AGLG_fake_script)()
+local function YKCTCJ_fake_script() -- Player.Script 
+	local script = Instance.new('Script', Player)
+
+	local Player = script.Parent
+	local Ani = script.Parent.Parent.Parent.PlayerAni
+	local HomeHub = script.Parent.Parent.Parent.HomeHub
+	local ItemHub = script.Parent.Parent.Parent.ItemsHub
+	local PlayerHub = script.Parent.Parent.Parent.PlayerHub
+	local TpHub = script.Parent.Parent.Parent.TpHub
+	
+	Player.MouseButton1Click:Connect(function()
+		Ani:TweenSize(UDim2.new(0, 301,0, 196), nil, nil, 0.2, nil)
+		wait(0.3)
+		HomeHub.Visible = false
+		ItemHub.Visible = false
+		TpHub.Visible = false
+		PlayerHub.Visible = true
+		Ani:TweenSize(UDim2.new(0, 0,0, 195), nil, nil, 0.2, nil)
+	end)
+end
+coroutine.wrap(YKCTCJ_fake_script)()
+local function IYAX_fake_script() -- Tps.Script 
+	local script = Instance.new('Script', Tps)
+
+	local Home = script.Parent
+	local Ani = script.Parent.Parent.Parent.TpAni
+	local HomeHub = script.Parent.Parent.Parent.HomeHub
+	local ItemHub = script.Parent.Parent.Parent.ItemsHub
+	local TpHub = script.Parent.Parent.Parent.TpHub
+	local PlayerHub = script.Parent.Parent.Parent.PlayerHub
+	
+	Home.MouseButton1Click:Connect(function()
+		Ani:TweenSize(UDim2.new(0, 301,0, 196), nil, nil, 0.2, nil)
+		wait(0.3)
+		HomeHub.Visible = true
+		ItemHub.Visible = false
+		PlayerHub.Visible = false
+		TpHub.Visible = true
+		Ani:TweenSize(UDim2.new(0, 0,0, 196), nil, nil, 0.2, nil)
+	end)
+end
+coroutine.wrap(IYAX_fake_script)()
+local function XRIOBJ_fake_script() -- AppleButton.Script 
+	local script = Instance.new('Script', AppleButton)
+
+	local Button = script.Parent
+	local Toggle = false
+	
+	Button.MouseButton1Click:Connect(function()
+		if Toggle == false then
+			Button.BackgroundColor3 = Color3.fromRGB(170, 85, 255)
+			Toggle = true
+		else
+			Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Toggle = false
+		end
+	end)
+end
+coroutine.wrap(XRIOBJ_fake_script)()
+local function IDLP_fake_script() -- ColaButton.Script 
+	local script = Instance.new('Script', ColaButton)
+
+	local Button = script.Parent
+	local Toggle = false
+	
+	Button.MouseButton1Click:Connect(function()
+		if Toggle == false then
+			Button.BackgroundColor3 = Color3.fromRGB(170, 85, 255)
+			Toggle = true
+		else
+			Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Toggle = false
+		end
+	end)
+end
+coroutine.wrap(IDLP_fake_script)()
+local function PIHTBK_fake_script() -- CookieButton.Script 
+	local script = Instance.new('Script', CookieButton)
+
+	local Button = script.Parent
+	local Toggle = false
+	
+	Button.MouseButton1Click:Connect(function()
+		if Toggle == false then
+			Button.BackgroundColor3 = Color3.fromRGB(170, 85, 255)
+			Toggle = true
+		else
+			Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Toggle = false
+		end
+	end)
+end
+coroutine.wrap(PIHTBK_fake_script)()
+local function TMTJEI_fake_script() -- PlanksButton.Script 
+	local script = Instance.new('Script', PlanksButton)
+
+	local Button = script.Parent
+	local Toggle = false
+	
+	Button.MouseButton1Click:Connect(function()
+		if Toggle == false then
+			Button.BackgroundColor3 = Color3.fromRGB(170, 85, 255)
+			Toggle = true
+		else
+			Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Toggle = false
+		end
+	end)
+end
+coroutine.wrap(TMTJEI_fake_script)()
+local function XLHZ_fake_script() -- GodButton.Script 
+	local script = Instance.new('Script', GodButton)
+
+	local Button = script.Parent
+	local Toggle = false
+	
+	Button.MouseButton1Click:Connect(function()
+		if Toggle == false then
+			Button.BackgroundColor3 = Color3.fromRGB(170, 85, 255)
+			Toggle = true
+		else
+			Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Toggle = false
+		end
+	end)
+end
+coroutine.wrap(XLHZ_fake_script)()
+local function USGPE_fake_script() -- Exit.Script 
+	local script = Instance.new('Script', Exit)
+
+	local Exit = script.Parent
+	local Top = script.Parent.Parent.Parent.TopFrame
+	local Main = script.Parent.Parent.MainFrame
+	local Mini = script.Parent.Parent.Minimize
+	local T = script.Parent.Parent.Title
+	local T2 = script.Parent.Parent.Title2
+	
+	Exit.MouseButton1Click:Connect(function()
+		Exit.Visible = false
+		Mini.Visible = false
+		T.Visible = false
+		T2.Visible = false
+		Main:TweenSize(UDim2.new(0, 425,0, 0),nil, nil, 0.3, nil)
+		wait()
+		Top:TweenSize(UDim2.new(0, 425,0, 0),nil, nil, 0.3, nil)
+	end)
+end
+coroutine.wrap(USGPE_fake_script)()
+local function FGUCH_fake_script() -- Minimize.Script 
+	local script = Instance.new('Script', Minimize)
+
+	local Mini = script.Parent
+	local Main = script.Parent.Parent.MainFrame
+	local Toggle = false
+	
+	Mini.MouseButton1Click:Connect(function()
+		if Toggle == false then
+			Main:TweenSize(UDim2.new(0, 425,0, 0),nil, nil, 0.3, nil)
+			Toggle = true
+		else
+			Main:TweenSize(UDim2.new(0, 425,0, 215),nil, nil, 0.3, nil)
+			Toggle = false
+		end
+	end)
+end
+coroutine.wrap(FGUCH_fake_script)()
+
+
+function dragify(Frame)
+dragToggle = nil
+dragSpeed = .25 -- You can edit this.
+dragInput = nil
+dragStart = nil
+dragPos = nil
+
+function updateInput(input)
+Delta = input.Position - dragStart
+Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+game:GetService("TweenService"):Create(Frame, TweenInfo.new(.25), {Position = Position}):Play()
+end
+
+Frame.InputBegan:Connect(function(input)
+if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+dragToggle = true
+dragStart = input.Position
+startPos = Frame.Position
+input.Changed:Connect(function()
+if (input.UserInputState == Enum.UserInputState.End) then
+dragToggle = false
+end
+end)
+end
+end)
+
+Frame.InputChanged:Connect(function(input)
+if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+dragInput = input
+end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+if (input == dragInput and dragToggle) then
+updateInput(input)
+end
+end)
+end
+
+dragify(TopFrame)
