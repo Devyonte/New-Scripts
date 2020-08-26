@@ -5,10 +5,32 @@ for _, v in pairs(game.CoreGui:GetChildren()) do
 	end
 end
 
+local UILib = Instance.new("ScreenGui")
+UILib.Name = "UILib"
+UILib.Parent = game.CoreGui
+UILib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+local function getNextWindowPos()
+	local biggest = 0;
+	local ok = nil;
+	for i, v in pairs(UILib:GetChildren()) do
+		if v.Position.X.Offset > biggest then
+			biggest = v.Position.X.Offset
+			ok = v;
+		end
+	end
+	if biggest == 0 then
+		biggest = biggest + 5;
+	else
+		biggest = biggest + ok.Size.X.Offset + 0.5;
+	end
+	
+	return biggest;
+end
+
 local Library = {}
 
 	function Library:Window(title)
-		local UILib = Instance.new("ScreenGui")
 		local Top = Instance.new("Frame")
 		local UICorner = Instance.new("UICorner")
 		local Title = Instance.new("TextLabel")
@@ -17,14 +39,10 @@ local Library = {}
 		local Container = Instance.new("Frame")
 		local UIListLayout = Instance.new("UIListLayout")
 		
-		UILib.Name = "UILib"
-		UILib.Parent = game.CoreGui
-		UILib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-		
 		Top.Name = "Top"
 		Top.Parent = UILib
 		Top.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-		Top.Position = UDim2.new(0.013, 0,0.015, 0)
+		Top.Position = UDim2.new(0, getNextWindowPos() + 10, 0, 10)
 		Top.Size = UDim2.new(0, 157, 0, 33)
 		Top.Active = true
 		Top.Draggable = true
