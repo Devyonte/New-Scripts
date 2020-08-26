@@ -5,6 +5,24 @@ for _, v in pairs(game.CoreGui:GetChildren()) do
 	end
 end
 
+local function getNextWindowPos()
+	local biggest = 0;
+	local ok = nil;
+	for i, v in pairs(UILib:GetChildren()) do
+		if v.Position.X.Offset > biggest then
+			biggest = v.Position.X.Offset
+			ok = v;
+		end
+	end
+	if biggest == 0 then
+		biggest = biggest + 5;
+	else
+		biggest = biggest + ok.Size.X.Offset + 5;
+	end
+	
+	return biggest;
+end
+
 local Library = {}
 
 	function Library:Window(title)
@@ -36,7 +54,7 @@ local Library = {}
 		Title.Parent = Top
 		Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		Title.BackgroundTransparency = 1.000
-		Title.Position = UDim2.new(0.101123594, 0, -0.0118255615, 0)
+		Title.Position = UDim2.new(0, getNextWindowPos() + 10, 0, 10)
 		Title.Size = UDim2.new(0, 111, 0, 31)
 		Title.Font = Enum.Font.SourceSans
 		Title.Text = title
