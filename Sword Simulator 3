@@ -2,7 +2,6 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0n
 
 local b = Library:Window("Auto Farm")
 local c = Library:Window("Teleports")
-local a = Library:Window("Misc")
 
 b:Toggle("Auto Swing",function(bool)
     Swing = bool
@@ -28,14 +27,6 @@ end)
 c:Button("Collect Chest", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1581.69922, 442.633667, -507.976715) + Vector3.new(1,0,0)
 end)
-a:Button("Copy Discord Invite",function(bool)
-    setclipboard("https://discord.gg/WZg2sRG")
- 
-    loadstring(game:HttpGet("http://www.narwhalhacks.xyz/UI/NotificationUI.lua", true))()
- 
-    Notify("Copied Discord Invite", "Have A Good Day!", 5)
-end)
-
 
 spawn(function()
     while wait() do
