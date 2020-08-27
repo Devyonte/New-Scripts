@@ -1,0 +1,160 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0nt3/New-Scripts/master/Midnight%20UI%20Lib"))()
+
+local b = Library:Window("Auto")
+local c = Library:Window("Teleports")
+local a = Library:Window("Misc")
+
+b:Toggle("Auto Click",function(bool)
+    autoclick = bool
+end)
+b:Toggle("Auto Upgrade Capacity",function(bool)
+    autocap = bool
+end)
+b:Toggle("Auto Upgrade Speed",function(bool)
+    autospeed = bool
+end)
+b:Toggle("Auto Upgrade Clicks",function(bool)
+    autoclicks = bool
+end)
+b:Toggle("Auto Open 500 Egg",function(bool)
+    MainEgg1 = bool
+end)
+b:Toggle("Auto Open 75k Egg",function(bool)
+    MainEgg2 = bool
+end)
+b:Toggle("Auto Open Volacano Egg",function(bool)
+    VolEgg = bool
+end)
+b:Toggle("Auto Open Atlantic Egg",function(bool)
+    AtEgg = bool
+end)
+b:Toggle("Auto Open Space Egg",function(bool)
+    SpaceEgg = bool
+end)
+
+c:Button("Main Island",function(bool)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-33.7018127, 792.675537, -69.3650055) + Vector3.new(1,0,0)
+end)
+c:Button("Volcano Island",function(bool)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5028.87939, 679.248779, -2591.99194) + Vector3.new(1,0,0)
+end)
+c:Button("Atlantic Island",function(bool)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2727.99536, 571.61908, -644.171875) + Vector3.new(1,0,0)
+end)
+c:Button("Space Island",function(bool)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-596.489258, 2777.30786, -298.116425) + Vector3.new(1,0,0)
+end)
+
+a:Button("Copy Discord Invite",function(bool)
+    setclipboard("https://discord.gg/WZg2sRG")
+     
+    loadstring(game:HttpGet("http://www.narwhalhacks.xyz/UI/NotificationUI.lua", true))()
+     
+    Notify("Copied Discord Invite", "Have A Good Day!", 5)
+end)
+
+spawn (function()
+    while wait() do
+        if MainEgg1 then
+local args = {
+    [1] = game:GetService("Players").LocalPlayer,
+    [2] = "Common",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage").KeyBind:InvokeServer(unpack(args))
+
+            end
+        end
+end)
+spawn (function()
+    while wait() do
+        if MainEgg2 then
+local args = {
+    [1] = game:GetService("Players").LocalPlayer,
+    [2] = "Fruit",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage").KeyBind:InvokeServer(unpack(args))
+
+            end
+        end
+end)
+spawn (function()
+    while wait() do
+        if VolEgg then
+local args = {
+    [1] = game:GetService("Players").LocalPlayer,
+    [2] = "Volcano",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage").KeyBind:InvokeServer(unpack(args))
+
+            end
+        end
+end)
+spawn (function()
+    while wait() do
+        if AtEgg then
+local args = {
+    [1] = game:GetService("Players").LocalPlayer,
+    [2] = "Water",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage").KeyBind:InvokeServer(unpack(args))
+
+            end
+        end
+end)
+spawn (function()
+    while wait() do
+        if SpaceEgg then
+local args = {
+    [1] = game:GetService("Players").LocalPlayer,
+    [2] = "Meteor",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage").KeyBind:InvokeServer(unpack(args))
+
+            end
+        end
+end)
+
+spawn (function()
+    while wait() do
+        if autocap then
+workspace.Events.UpgCapacity1:FireServer()
+            end
+        end
+end)
+spawn (function()
+    while wait() do
+        if autospeed then
+workspace.Events.UpgSpeed2:FireServer()
+
+            end
+        end
+end)
+
+spawn (function()
+    while wait() do
+        if autoclicks then
+workspace.Events.UpgClicks1:FireServer()
+
+            end
+        end
+    end)
+
+
+spawn (function()
+    while wait() do
+        if autoclick then
+workspace.Events.Give:FireServer()
+
+        end
+    end
+end)
