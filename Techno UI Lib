@@ -60,9 +60,6 @@ UIListLayout.Parent = Container
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
-UIAspectRatioConstraint.Parent = Container
-UIAspectRatioConstraint.AspectRatio = inf
-
 Title.Name = "Title"
 Title.Parent = Top
 Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
