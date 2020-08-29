@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0nt3/New-Scripts/master/MangeR%20Ui%20Lib"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0nt3/New-Scripts/master/Midnight%20UI%20Lib"))()
 
 local b = Library:Window("Items")
 local c = Library:Window("Teleports")
