@@ -61,11 +61,10 @@ Text.TextSize = 14.000
 Text.TextWrapped = true
 Text.Text = text
 
-wait(0.1)
 MainFrame:TweenPosition(UDim2.fromScale(0.83816427, 0.835243583))
 wait(time)
 MainFrame:TweenPosition(UDim2.fromScale(2, 0.835))
-wait(1)
+wait(0.8)
 ScreenGui:Destroy()
 
 end
