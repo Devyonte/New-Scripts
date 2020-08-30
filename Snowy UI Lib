@@ -173,7 +173,7 @@ end
 
 dragify(Top)
 
-local lib = {}
+local Lib = {}
 
 function Lib:Button(name, callback)
     local ButtonContainer = Instance.new("Frame")
