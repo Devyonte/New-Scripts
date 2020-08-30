@@ -31,7 +31,7 @@ end
 
 local Library = {}
 
-function Library:Window(title, color)
+function Library:Window(title)
 local Top = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local Bar = Instance.new("Frame")
@@ -43,9 +43,9 @@ local UIListLayout_2 = Instance.new("UIListLayout")
 
 Top.Name = "Top"
 Top.Parent = UILib
-Top.BackgroundColor3 = Color3.fromRGB(color)
+Top.BackgroundColor3 = Color3.fromRGB(17, 27, 34)
 Top.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Top.Position = UDim2.new(0.356828183, 0, 0.204968944, 0)
+Top.Position = UDim2.new(0, getNextWindowPos() + 10, 0, 10)
 Top.Size = UDim2.new(0, 194, 0, 36)
 Top.Active = true
 
@@ -175,7 +175,7 @@ dragify(Top)
 
 local lib = {}
 
-function Lib:Button(name, color, callback)
+function Lib:Button(name, callback)
     local ButtonContainer = Instance.new("Frame")
     local Button = Instance.new("TextButton")
     local UICorner_2 = Instance.new("UICorner")
@@ -194,7 +194,7 @@ function Lib:Button(name, color, callback)
     
     Button.Name = "Button"
     Button.Parent = ButtonContainer
-    Button.BackgroundColor3 = Color3.fromRGB(color)
+    Button.BackgroundColor3 = Color3.fromRGB(17, 27, 34)
     Button.Position = UDim2.new(0.0618556701, 0, 0.1875, 0)
     Button.Size = UDim2.new(0, 171, 0, 30)
     Button.Font = Enum.Font.SourceSans
@@ -248,7 +248,7 @@ function Lib:Button(name, color, callback)
     coroutine.wrap(HPSBMTC_fake_script)()
 end
 
-function Lib:Toggle(name, color, callback)
+function Lib:Toggle(name, callback)
     local ToggleContainer = Instance.new("Frame")
     local BackGroundToggle = Instance.new("Frame")
     local UICorner_4 = Instance.new("UICorner")
@@ -267,7 +267,7 @@ function Lib:Toggle(name, color, callback)
     
     BackGroundToggle.Name = "BackGroundToggle"
     BackGroundToggle.Parent = ToggleContainer
-    BackGroundToggle.BackgroundColor3 = Color3.fromRGB(color)
+    BackGroundToggle.BackgroundColor3 = Color3.fromRGB(17, 27, 34)
     BackGroundToggle.Position = UDim2.new(0.0567010269, 0, 0.1875, 0)
     BackGroundToggle.Size = UDim2.new(0, 171, 0, 30)
     
