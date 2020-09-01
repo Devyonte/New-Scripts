@@ -1,0 +1,144 @@
+function Invite(invite)
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Text = Instance.new("TextLabel")
+local No = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local Yes = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UIGradient_2 = Instance.new("UIGradient")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Main.Position = UDim2.new(2, 0, 0.835243583, 0)
+Main.Size = UDim2.new(0.173748106, 0, 0.0963172838, 0)
+Main.Active = true
+
+UICorner.CornerRadius = UDim.new(0, 2)
+UICorner.Parent = Main
+
+Text.Name = "Text"
+Text.Parent = Main
+Text.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Text.BackgroundTransparency = 1.000
+Text.BorderSizePixel = 0
+Text.Position = UDim2.new(0.0611353703, 0, 0, 0)
+Text.Size = UDim2.new(0.873362422, 0, 0.5, 0)
+Text.Font = Enum.Font.SourceSans
+Text.Text = "Copy Discord Invite?"
+Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+Text.TextScaled = true
+Text.TextSize = 14.000
+Text.TextWrapped = true
+
+No.Name = "No"
+No.Parent = Main
+No.BackgroundColor3 = Color3.fromRGB(255, 0, 4)
+No.Position = UDim2.new(0.545851529, 0, 0.5, 0)
+No.Size = UDim2.new(0.388646275, 0, 0.382352948, 0)
+No.Font = Enum.Font.SourceSans
+No.Text = "No"
+No.TextColor3 = Color3.fromRGB(255, 255, 255)
+No.TextSize = 20.000
+No.TextWrapped = true
+No.MouseButton1Click:Connect(function()
+	Main:TweenPosition(UDim2.fromScale(2, 0.835))
+end)
+
+UICorner_2.CornerRadius = UDim.new(0, 3)
+UICorner_2.Parent = No
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.54, Color3.fromRGB(115, 115, 115)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient.Parent = No
+
+Yes.Name = "Yes"
+Yes.Parent = Main
+Yes.BackgroundColor3 = Color3.fromRGB(85, 255, 127)
+Yes.Position = UDim2.new(0.0611353703, 0, 0.5, 0)
+Yes.Size = UDim2.new(0.388646275, 0, 0.382352948, 0)
+Yes.Font = Enum.Font.SourceSans
+Yes.Text = "Yes"
+Yes.TextColor3 = Color3.fromRGB(255, 255, 255)
+Yes.TextSize = 20.000
+Yes.TextWrapped = true
+Yes.MouseButton1Click:Connect(function()
+	setclipboard(invite)
+	wait()
+	Main:TweenPosition(UDim2.fromScale(2, 0.835))
+end)
+
+UICorner_3.CornerRadius = UDim.new(0, 3)
+UICorner_3.Parent = Yes
+
+UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.49, Color3.fromRGB(113, 113, 113)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
+UIGradient_2.Parent = Yes
+
+-- Scripts:
+
+local function GHRFU_fake_script() -- No.Script 
+	local script = Instance.new('Script', No)
+
+	local button = script.Parent
+	local gradient = button.UIGradient
+	local ts = game:GetService("TweenService") 
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Circular, Enum.EasingDirection.Out)
+	local offset1 = {Offset = Vector2.new(1, 0)}
+	local create = ts:Create(gradient, ti, offset1)
+	local startingPos = Vector2.new(-1, 0) --start on the right, tween to the left so it looks like the shine went from left to right
+	local addWait = 1.5 --the amount of seconds between each couplet of shines
+	gradient.Offset = startingPos
+	
+	local function animate()
+		
+		create:Play()
+		create.Completed:Wait() --wait for tween to stop
+		gradient.Offset = startingPos --reset offset
+		create:Play() --play again (I did this only 2 times per "couplet", you can do it more times if you want)
+		create.Completed:Wait()
+		gradient.Offset = startingPos
+		wait(addWait) --wait some bit before the next couplet
+		animate() --call itself to make this into a loop
+		
+	end
+	
+	animate() --but we still need to initially call it
+end
+coroutine.wrap(GHRFU_fake_script)()
+local function CXKT_fake_script() -- Yes.Script 
+	local script = Instance.new('Script', Yes)
+
+	local button = script.Parent
+	local gradient = button.UIGradient
+	local ts = game:GetService("TweenService") 
+	local ti = TweenInfo.new(1, Enum.EasingStyle.Circular, Enum.EasingDirection.Out)
+	local offset1 = {Offset = Vector2.new(1, 0)}
+	local create = ts:Create(gradient, ti, offset1)
+	local startingPos = Vector2.new(-1, 0) --start on the right, tween to the left so it looks like the shine went from left to right
+	local addWait = 1.5 --the amount of seconds between each couplet of shines
+	gradient.Offset = startingPos
+	
+	local function animate()
+		
+		create:Play()
+		create.Completed:Wait() --wait for tween to stop
+		gradient.Offset = startingPos --reset offset
+		create:Play() --play again (I did this only 2 times per "couplet", you can do it more times if you want)
+		create.Completed:Wait()
+		gradient.Offset = startingPos
+		wait(addWait) --wait some bit before the next couplet
+		animate() --call itself to make this into a loop
+		
+	end
+	
+	animate() --but we still need to initially call it
+end
+coroutine.wrap(CXKT_fake_script)()
+
+Main:TweenPosition(UDim2.fromScale(0.83816427, 0.835243583))
+end
