@@ -1,0 +1,39 @@
+function highlightplayer(player)
+    if player == game.Players.LocalPlayer then
+        return nil
+    end
+    local TargetPart
+ 
+    if player:IsA("Player") then
+        local TargetCharacter = player.Character or player.CharacterAdded:Wait()
+        TargetPart = TargetCharacter.PrimaryPart
+    elseif player:IsA("BasePart") then
+        TargetPart = player
+    end
+    if not TargetPart then
+        return nil
+    end
+ 
+    local Old = game.Players.LocalPlayer:WaitForChild("PlayerGui"):FindFirstChild("ESP:"..player.Name)
+ 
+    local Billboard = Old or Instance.new("BillboardGui")
+    Billboard.Name = "ESP:"..player.Name
+    Billboard.Adornee = TargetPart
+    Billboard.Size = UDim2.new(2,0,2,0)
+    Billboard.AlwaysOnTop = true
+    Billboard.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+    local Frame = Billboard:FindFirstChild("Frame") or Instance.new("Frame")
+    Frame.Parent = Billboard
+    
+    if player.TeamColor ~= game.Players.LocalPlayer.TeamColor then
+        Frame.Size = UDim2.new(1,0,1,0)
+        Frame.BackgroundColor3 = player.TeamColor.Color
+        Frame.BackgroundTransparency = .25
+        Frame.BorderSizePixel = 0
+    end
+end
+
+for i,v in pairs(game.Players:GetPlayers()) do
+    highlightplayer(v)
+end
