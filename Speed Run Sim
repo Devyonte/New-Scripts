@@ -1,0 +1,118 @@
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/edJT9EGX", true))()
+
+local Window = Library:CreateWindow"Speed Run Simulator"
+
+local a = Window:AddFolder"Main"
+local b = Window:AddFolder"Teleports"
+
+a:AddToggle({text = "Auto Speed", flag = "toggle", state = false, callback = function(bool)
+    AutoSpeed = bool 
+end})
+
+a:AddToggle({text = "Auto Orbs", flag = "toggle", state = false, callback = function(bool)
+    AutoOrb = bool 
+end})
+
+a:AddToggle({text = "Auto Rings", flag = "toggle", state = false, callback = function(bool)
+    AutoRing = bool 
+end})
+
+a:AddToggle({text = "Auto Rebirth", flag = "toggle", state = false, callback = function(bool)
+    AutoRe = bool 
+end})
+
+b:AddButton({text = "Main Area", flag = "button", callback = function() 
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1369.56689, 196.96228, -404.980408) + Vector3.new(1,0,0)
+end})
+
+b:AddButton({text = "Desert Area", flag = "button", callback = function() 
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2274.83398, 196.96228, -655.149414) + Vector3.new(1,0,0)
+end})
+
+b:AddButton({text = "Frozen Area", flag = "button", callback = function() 
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3163.4314, 196.96228, -664.252075) + Vector3.new(1,0,0)
+end})
+
+b:AddButton({text = "Lava Area", flag = "button", callback = function() 
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4419.70166, 196.96228, -646.82428) + Vector3.new(1,0,0)
+end})
+
+b:AddButton({text = "Spooky Area", flag = "button", callback = function() 
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5556.54102, 197.083649, -647.255554) + Vector3.new(1,0,0)
+end})
+
+b:AddButton({text = "Crown Area", flag = "button", callback = function() 
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6482.15918, 197.107452, -660.254028) + Vector3.new(1,0,0)
+end})
+
+b:AddButton({text = "Candy Area", flag = "button", callback = function() 
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7542.1499, 196.96228, -661.608337) + Vector3.new(1,0,0)
+end})
+
+b:AddButton({text = "Space Area", flag = "button", callback = function() 
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8754.71582, 196.96228, -643.398682) + Vector3.new(1,0,0)
+end})
+
+b:AddButton({text = "Spongebob Area", flag = "button", callback = function() 
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9963.91895, 197.107452, -650.884033) + Vector3.new(1,0,0)
+end})
+
+b:AddButton({text = "VIP Area", flag = "button", callback = function() 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1384.4082, 196.96228, -1576.16479) + Vector3.new(1,0,0)
+end})
+
+b:AddButton({text = "Cloud Area", flag = "button", callback = function() 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1097.27539, 197.115692, -544.340149) + Vector3.new(1,0,0)
+end})
+
+b:AddButton({text = "Win Race", flag = "button", callback = function() 
+    for i,v in pairs(game.Workspace:GetDescendants()) do
+       if v.Name == "RaceEnd" then
+           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+        end
+    end
+end})
+
+spawn(function()
+   while wait() do
+       if AutoSpeed then
+        game:GetService("ReplicatedStorage").Remotes.AddSpeed:FireServer()
+        end
+    end
+end)
+
+spawn(function()
+   while wait() do
+       if AutoOrb then
+            for i,v in pairs(game.Workspace:GetDescendants()) do
+               if v.Name == "Orb" then
+                   v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                   wait()
+                end
+            end
+        end
+    end
+end)
+
+spawn(function()
+   while wait() do
+       if AutoRing then
+            for i,v in pairs(game.Workspace:GetDescendants()) do
+               if v.Name == "Ring" then
+                   v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                   wait()
+                end
+            end
+        end
+    end
+end)
+
+spawn(function()
+   while wait() do
+       if AutoRe then
+            game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer()
+        end
+    end
+end)
+
+Library:Init()
