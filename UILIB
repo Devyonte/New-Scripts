@@ -261,7 +261,7 @@ function Library:Window(title)
 			Toggle = false
 			script.Parent.MouseButton1Click:Connect(function()
 				if Toggle == false then
-					script.Parent.Parent.TogglePic.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+					script.Parent.Parent.TogglePic.BackgroundColor3 = Color3.fromRGB(1, 129, 208)
 					Toggle = true
 				else
 					script.Parent.Parent.TogglePic.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
