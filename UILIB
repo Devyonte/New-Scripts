@@ -181,7 +181,7 @@ function Library:Window(title)
 			end)
 			script.Parent.MouseButton1Up:Connect(function()
 				wait()
-				script.Parent.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+				script.Parent.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 			end)
 		end
 		coroutine.wrap(KSDZNCB_fake_script)()
