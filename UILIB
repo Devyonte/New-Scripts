@@ -4,6 +4,8 @@ for _, v in pairs(game.CoreGui:GetChildren()) do
 	end
 end
 
+print("Devonte was here")
+
 local UILib = Instance.new("ScreenGui")
 
 UILib.Name = "UILib"
