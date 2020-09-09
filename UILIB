@@ -1,0 +1,279 @@
+for _, v in pairs(game.CoreGui:GetChildren()) do
+	if v.Name == "UILib" then
+		v:Destroy()
+	end
+end
+
+local UILib = Instance.new("ScreenGui")
+
+UILib.Name = "UILib"
+UILib.Parent = game.CoreGui
+
+local function getNextWindowPos()
+	local biggest = 0;
+	local ok = nil;
+	for i, v in pairs(UILib:GetChildren()) do
+		if v.Position.X.Offset > biggest then
+			biggest = v.Position.X.Offset
+			ok = v;
+		end
+	end
+	if biggest == 0 then
+		biggest = biggest + 5;
+	else
+		biggest = biggest + ok.Size.X.Offset + 5;
+	end
+	
+	return biggest;
+end
+
+
+local Library = {}
+
+function Library:Window(title)
+		local Top = Instance.new("Frame")
+		local UICorner = Instance.new("UICorner")
+		local Line = Instance.new("Frame")
+		local Title = Instance.new("TextLabel")
+		local Container = Instance.new("Frame")
+		local UIListLayout = Instance.new("UIListLayout")
+		local MiniLogo = Instance.new("ImageButton")
+		local Mini = Instance.new("TextButton")
+
+		Top.Name = "Top"
+		Top.Parent = UILib
+		Top.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+		Top.BorderSizePixel = 0
+		Top.Position = UDim2.new(0, getNextWindowPos() + 10, 0, 10)
+		Top.Size = UDim2.new(0, 230, 0, 31)
+		Top.Active = true
+		Top.Draggable = true
+
+		UICorner.CornerRadius = UDim.new(0, 2)
+		UICorner.Parent = Top
+
+		Line.Name = "Line"
+		Line.Parent = Top
+		Line.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+		Line.BorderSizePixel = 0
+		Line.Position = UDim2.new(0, 0, 0.806451619, 0)
+		Line.Size = UDim2.new(0, 230, 0, 6)
+
+		Title.Name = "Title"
+		Title.Parent = Top
+		Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Title.BackgroundTransparency = 1.000
+		Title.Position = UDim2.new(0.0384615399, 0, 0.129032254, 0)
+		Title.Size = UDim2.new(0, 58, 0, 25)
+		Title.Font = Enum.Font.GothamSemibold
+		Title.Text = "Title"
+		Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Title.TextScaled = true
+		Title.TextSize = 14.000
+		Title.TextWrapped = true
+		Title.TextXAlignment = Enum.TextXAlignment.Left
+
+		Container.Name = "Container"
+		Container.Parent = Top
+		Container.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Container.BackgroundTransparency = 1.000
+		Container.BorderSizePixel = 0
+		Container.Position = UDim2.new(0, 0, 1.00000036, 0)
+		Container.Size = UDim2.new(0, 230, 0, 643)
+
+		UIListLayout.Parent = Container
+		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+		UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+		MiniLogo.Name = "MiniLogo"
+		MiniLogo.Parent = Top
+		MiniLogo.BackgroundTransparency = 1.000
+		MiniLogo.Position = UDim2.new(0.84065938, 0, 0.0645161271, 0)
+		MiniLogo.Rotation = 90.000
+		MiniLogo.Size = UDim2.new(0, 23, 0, 27)
+		MiniLogo.Image = "rbxassetid://3926307971"
+		MiniLogo.ImageRectOffset = Vector2.new(764, 244)
+		MiniLogo.ImageRectSize = Vector2.new(36, 36)
+
+		Mini.Name = "Mini"
+		Mini.Parent = Top
+		Mini.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Mini.BackgroundTransparency = 1.000
+		Mini.Position = UDim2.new(0.796703279, 0, 6.15273734e-08, 0)
+		Mini.Size = UDim2.new(0, 37, 0, 31)
+		Mini.ZIndex = 3
+		Mini.Font = Enum.Font.SourceSans
+		Mini.Text = ""
+		Mini.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Mini.TextSize = 14.000
+	
+		local function HFMYB_fake_script() -- Mini.Script 
+			local script = Instance.new('Script', Mini)
+
+			Toggle = false
+			script.Parent.MouseButton1Click:Connect(function()
+				if Toggle == false then
+					game:GetService("TweenService"):Create(script.Parent.Parent.MiniLogo, TweenInfo.new(0.23, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation = 180}):Play();
+					script.Parent.Parent.Container.ClipsDescendants = true
+					script.Parent.Parent.Container:TweenSize(UDim2.new(0, 230,0, 0), "Out", "Quad", 0.25, true)
+					Toggle = true
+				else
+					game:GetService("TweenService"):Create(script.Parent.Parent.MiniLogo, TweenInfo.new(0.23, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation = 90}):Play();
+					script.Parent.Parent.Container:TweenSize(UDim2.new(0, 230,0, 643), "Out", "Quad", 0.25, true)
+					script.Parent.Parent.Container.ClipsDescendants = false
+					Toggle = false
+				end
+			end)
+		end
+	coroutine.wrap(HFMYB_fake_script)()
+	
+	local Lib = {}
+	
+	function Lib:Button(name, callback)
+		local callback = callback or function() end
+		local ButtonConainter = Instance.new("Frame")
+		local Button = Instance.new("TextButton")
+		local UICorner_2 = Instance.new("UICorner")
+		local ButtonName = Instance.new("TextLabel")
+		
+		ButtonConainter.Name = "ButtonConainter"
+		ButtonConainter.Parent = Container
+		ButtonConainter.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+		ButtonConainter.BorderSizePixel = 0
+		ButtonConainter.Size = UDim2.new(0, 230, 0, 44)
+		
+		Button.Name = "Button"
+		Button.Parent = ButtonConainter
+		Button.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+		Button.BorderSizePixel = 0
+		Button.Position = UDim2.new(0.0430372171, 0, 0.142732367, 0)
+		Button.Size = UDim2.new(0, 209, 0, 30)
+		Button.AutoButtonColor = false
+		Button.Font = Enum.Font.SourceSans
+		Button.Text = ""
+		Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Button.TextSize = 14.000
+		Button.MouseButton1Click:Connect(function()
+			pcall(callback)
+		end)
+		
+		UICorner_2.CornerRadius = UDim.new(0, 2)
+		UICorner_2.Parent = Button
+		
+		ButtonName.Name = "ButtonName"
+		ButtonName.Parent = Button
+		ButtonName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ButtonName.BackgroundTransparency = 1.000
+		ButtonName.Position = UDim2.new(0.210202843, 0, 0.100000001, 0)
+		ButtonName.Size = UDim2.new(0, 120, 0, 24)
+		ButtonName.Font = Enum.Font.GothamSemibold
+		ButtonName.Text = name
+		ButtonName.TextColor3 = Color3.fromRGB(255, 255, 255)
+		ButtonName.TextScaled = true
+		ButtonName.TextSize = 14.000
+		ButtonName.TextWrapped = true
+		
+		local function KSDZNCB_fake_script() -- Button.Script 
+			local script = Instance.new('Script', Button)
+			
+			script.Parent.MouseButton1Down:Connect(function()
+				script.Parent.BackgroundColor3 = Color3.fromRGB(1, 129, 208)
+			end)
+			script.Parent.MouseButton1Up:Connect(function()
+				wait()
+				script.Parent.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+			end)
+		end
+		coroutine.wrap(KSDZNCB_fake_script)()
+	end
+	
+	function Lib:Toggle(name, callback)
+		local ToggleContainer = Instance.new("Frame")
+		local ToggleBack = Instance.new("Frame")
+		local UICorner_3 = Instance.new("UICorner")
+		local ToggleName = Instance.new("TextLabel")
+		local Toggle = Instance.new("TextButton")
+		local TogglePic = Instance.new("Frame")
+		local UICorner_4 = Instance.new("UICorner")
+		
+		ToggleContainer.Name = "ToggleContainer"
+		ToggleContainer.Parent = Container
+		ToggleContainer.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+		ToggleContainer.BorderSizePixel = 0
+		ToggleContainer.Size = UDim2.new(0, 230, 0, 44)
+		
+		ToggleBack.Name = "ToggleBack"
+		ToggleBack.Parent = ToggleContainer
+		ToggleBack.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+		ToggleBack.Position = UDim2.new(0.0430372171, 0, 0.159090906, 0)
+		ToggleBack.Size = UDim2.new(0, 209, 0, 30)
+		
+		UICorner_3.CornerRadius = UDim.new(0, 2)
+		UICorner_3.Parent = ToggleBack
+		
+		ToggleName.Name = "ToggleName"
+		ToggleName.Parent = ToggleBack
+		ToggleName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		ToggleName.BackgroundTransparency = 1.000
+		ToggleName.Position = UDim2.new(0.0416666679, 0, 0.100000001, 0)
+		ToggleName.Size = UDim2.new(0, 109, 0, 24)
+		ToggleName.Font = Enum.Font.GothamSemibold
+		ToggleName.Text = name
+		ToggleName.TextColor3 = Color3.fromRGB(255, 255, 255)
+		ToggleName.TextScaled = true
+		ToggleName.TextSize = 14.000
+		ToggleName.TextWrapped = true
+		ToggleName.TextXAlignment = Enum.TextXAlignment.Left
+		
+		Toggle.Name = "Toggle"
+		Toggle.Parent = ToggleBack
+		Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Toggle.BackgroundTransparency = 1.000
+		Toggle.Position = UDim2.new(0.00595238805, 0, -0.0166666675, 0)
+		Toggle.Size = UDim2.new(0, 205, 0, 30)
+		Toggle.ZIndex = 5
+		Toggle.Font = Enum.Font.SourceSans
+		Toggle.Text = ""
+		Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+		Toggle.TextSize = 14.000
+		local ToggleT = false
+		Toggle.MouseButton1Click:Connect(function()
+			if ToggleT == false then
+				ToggleT = true
+			else
+				ToggleT = false
+			end
+			callback(ToggleT)
+		end)
+		
+		TogglePic.Name = "TogglePic"
+		TogglePic.Parent = ToggleBack
+		TogglePic.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		TogglePic.Position = UDim2.new(0.877766013, 0, 0.13333334, 0)
+		TogglePic.Size = UDim2.new(0, 23, 0, 22)
+		
+		UICorner_4.CornerRadius = UDim.new(0, 3)
+		UICorner_4.Parent = TogglePic
+		
+		local function THXBNE_fake_script() -- Toggle.Script 
+			local script = Instance.new('Script', Toggle)
+			
+			Toggle = false
+			script.Parent.MouseButton1Click:Connect(function()
+				if Toggle == false then
+					script.Parent.Parent.TogglePic.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+					Toggle = true
+				else
+					script.Parent.Parent.TogglePic.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+					Toggle = false
+				end
+			end)
+		end
+		coroutine.wrap(THXBNE_fake_script)()
+	end
+	
+	return Lib;
+	
+end
+
+return Library;
