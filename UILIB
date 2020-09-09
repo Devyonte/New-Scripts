@@ -66,7 +66,7 @@ function Library:Window(title)
 		Title.Position = UDim2.new(0.0384615399, 0, 0.129032254, 0)
 		Title.Size = UDim2.new(0, 58, 0, 25)
 		Title.Font = Enum.Font.GothamSemibold
-		Title.Text = "Title"
+		Title.Text = title
 		Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Title.TextScaled = true
 		Title.TextSize = 14.000
