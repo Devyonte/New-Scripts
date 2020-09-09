@@ -1,0 +1,92 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0nt3/New-Scripts/master/UILIB"))()
+
+local a = Library:Window("Main")
+
+a:Toggle("Auto Coins", function(bool)
+    AutoCoin = bool
+end)
+
+a:Button("Anti-Afk", function()
+    local vu = game:GetService("VirtualUser")
+    game:GetService("Players").LocalPlayer.Idled:connect(function()
+       vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+       wait(1)
+       vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    end)
+end)
+
+spawn(function()
+    while wait() do
+        if AutoCoin then
+            for i,v in pairs(game.Workspace:GetDescendants()) do
+                if v.Name == "Coin_Server" then
+                    local plr = game:GetService("Players").LocalPlayer
+                    local char = plr.Character or plr.CharacterAdded:Wait()
+                    local Part = v
+                    local distance = (char.HumanoidRootPart.Position - Part.Position).magnitude
+                    if distance <= 30 then
+                    local Noclipping
+                    local moving = false
+                    function tp(x,y,z)
+                    	local valtomove = 1
+                    	moving = true
+                    	if x < game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X then
+                    		while x < game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X do
+                    			wait()
+                    			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X-valtomove,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z))
+                    		end
+                    	end
+                    	if z < game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z then
+                    		while z < game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z do
+                    			wait()
+                    			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z-valtomove))
+                    		end
+                    	end
+                    	if x > game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X then
+                    		while x > game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X do
+                    			wait()
+                    			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X+valtomove,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z))
+                    		end
+                    	end
+                    	if z > game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z then
+                    		while z > game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z do
+                    			wait()
+                    			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z+valtomove))
+                    		end
+                    	end
+                    	if y < game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y then
+                    		while y < game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y do
+                    			wait()
+                    			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y-valtomove,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z))
+                    		end
+                    	end
+                    	if y > game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y then
+                    		while y > game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y do
+                    			wait()
+                    			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y+valtomove,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z))
+                    		end
+                    	end
+                    	moving = false
+                    end
+                    
+                    spawn(function()
+                    	game:getService("RunService"):BindToRenderStep("",0,function()
+                    		pcall(function()
+                    			if not game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+                    				moving = false
+                    				return
+                    			end
+                    			if moving and not Noclipping then
+                    				game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):ChangeState(11)
+                    			end
+                    		end)
+                    	end)
+                    end)
+                    
+                    tp(v.Position.X, v.Position.Y, v.Position.Z)
+                    end
+                end
+            end
+        end
+    end
+end)
