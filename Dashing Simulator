@@ -124,7 +124,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4813.66
 local Noclipping
 local moving = false
 function tp(x,y,z)
-	local valtomove = 8
+	local valtomove = 7
 	moving = true
 	if x < game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X then
 		while x < game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X do
@@ -199,11 +199,11 @@ tp(-4623.27881, 2221.66821, 7399.85352)
 wait()
 tp(-4669.89648, 2221.66821, 7722.09619)
 wait()
-tp(-1306.18567, 1867.45886, 7486.56934)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1306.18567, 1867.45886, 7486.56934) + Vector3.new(1,0,0)
 wait()
 tp(-1352.36133, 1867.45886, 7622.51709)
 wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1416.43604, 1867.45862, 7506.68896) + Vector3.new(1,0,0)
+tp(-1416.43604, 1867.45862, 7506.68896)
 wait()
 tp(-1428.52905, 1867.45874, 7445.20752)
 wait()
