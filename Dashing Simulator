@@ -120,7 +120,7 @@ end)
 spawn (function()
         while wait() do
             if autoOrbs then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4813.66064, 2221.66821, 7918.95557) + Vector3.new(1,0,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4813.66064, 2221.66821, 7918.95557)
 local Noclipping
 local moving = false
 function tp(x,y,z)
@@ -199,7 +199,7 @@ tp(-4623.27881, 2221.66821, 7399.85352)
 wait()
 tp(-4669.89648, 2221.66821, 7722.09619)
 wait()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1306.18567, 1867.45886, 7486.56934) + Vector3.new(1,0,0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1306.18567, 1867.45886, 7486.56934)
 wait()
 tp(-1352.36133, 1867.45886, 7622.51709)
 wait()
