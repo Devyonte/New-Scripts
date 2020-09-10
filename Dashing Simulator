@@ -124,7 +124,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4813.66
 local Noclipping
 local moving = false
 function tp(x,y,z)
-	local valtomove = 10
+	local valtomove = 8
 	moving = true
 	if x < game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X then
 		while x < game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X do
