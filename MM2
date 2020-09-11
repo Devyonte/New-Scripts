@@ -2,11 +2,11 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0n
 
 local a = Library:Window("Main")
 
-a:Toggle("Auto Coins(Tping)", function(bool)
+a:Toggle("Auto Coins(Tp)", function(bool)
     AutoCoin = bool
 end)
 
-a:Toggle("Auto Coins(Walking)", function(bool)
+a:Toggle("Auto Coins(Walk)", function(bool)
     AutoCoinWalk = bool
 end)
 
