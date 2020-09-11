@@ -7,7 +7,7 @@ a:Toggle("Auto Coins(Tping)", function(bool)
 end)
 
 a:Toggle("Auto Coins(Walking)", function(bool)
-    AutoCoin = bool
+    AutoCoinWalk = bool
 end)
 
 a:Button("Anti-Afk", function()
@@ -97,7 +97,7 @@ end)
 
 spawn(function()
     while wait() do
-        if AutoCoin then
+        if AutoCoinWalk then
             for i,v in pairs(game.Workspace:GetDescendants()) do
                 if v.Name == "Coin_Server" then
                     local plr = game:GetService("Players").LocalPlayer
