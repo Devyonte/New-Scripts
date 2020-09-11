@@ -2,7 +2,11 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0n
 
 local a = Library:Window("Main")
 
-a:Toggle("Auto Coins", function(bool)
+a:Toggle("Auto Coins(Tping)", function(bool)
+    AutoCoin = bool
+end)
+
+a:Toggle("Auto Coins(Walking)", function(bool)
     AutoCoin = bool
 end)
 
@@ -90,3 +94,23 @@ spawn(function()
         end
     end
 end)
+
+spawn(function()
+    while wait() do
+        if AutoCoin then
+            for i,v in pairs(game.Workspace:GetDescendants()) do
+                if v.Name == "Coin_Server" then
+                    local plr = game:GetService("Players").LocalPlayer
+                    local char = plr.Character or plr.CharacterAdded:Wait()
+                    local Part = v
+                    local distance = (char.HumanoidRootPart.Position - Part.Position).magnitude
+                    if distance <= 20 then
+                        game.Players.LocalPlayer.Character.Humanoid.WalkToPoint = Vector3.new(v.Position.X, v.Position.Y, v.Position.Z )
+                    end
+                end
+            end
+        end
+    end
+end)
+                 
+                   
