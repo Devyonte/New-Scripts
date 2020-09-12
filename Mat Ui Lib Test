@@ -217,6 +217,15 @@ function Library:Window(title)
 			Container.Visible = true
 		end)
 		
+		TabButton.MouseButton1Down:Connect(function()
+				for i,v in pairs(TabHolder:GetChildren()) do
+					if v.Name == "TabButton" then
+						v.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+					end
+				end
+				TabButton.BackgroundColor3 = Color3.fromRGB(1, 255, 120)
+			end)
+		
 		UICorner.CornerRadius = UDim.new(0, 1)
 		UICorner.Parent = TabButton
 		
@@ -233,20 +242,6 @@ function Library:Window(title)
 		TabName.TextSize = 14.000
 		TabName.TextWrapped = true
 		TabName.TextXAlignment = Enum.TextXAlignment.Left
-		
-		local function XGTZ_fake_script() -- TabButton.Script 
-			local script = Instance.new('Script', TabButton)
-			
-			script.Parent.MouseButton1Down:Connect(function()
-				for i,v in pairs(script.Parent.Parent.Parent.TabHolder:GetChildren()) do
-					if v.Name == "TabButton" then
-						v.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-					end
-				end
-				script.Parent.BackgroundColor3 = Color3.fromRGB(1, 255, 120)
-			end)
-		end
-		coroutine.wrap(XGTZ_fake_script)()
 		
 		local Liby = {}
 		
