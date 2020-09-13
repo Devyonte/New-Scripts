@@ -333,13 +333,13 @@ function Library:Window(title)
 
 		Dropdown.MouseButton1Down:connect(function()
 			if Opened == true then
-				DropdownBody:TweenSize(UDim2.fromScale(1, 0))
+				DropdownBody:TweenSize(UDim2.fromScale(1, 0), "Out", "Quad" 0.4, true)
 				game:GetService("TweenService"):Create(DropdownBody, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 					Size = UDim2.fromScale(1, 0)
 				}):Play();
 				for _, v in pairs(DropdownBody:GetChildren()) do
 					if v:IsA("TextButton") then
-						v:TweenSize(UDim2.new(1, 0, 0, 0))
+						v:TweenSize(UDim2.new(1, 0, 0, 0), "Out", "Quad" 0.4, true)
 					end
 				end
 				wait(0.5)
@@ -348,7 +348,7 @@ function Library:Window(title)
 				Dropdown.ZIndex = 3
 				Arrow1.ZIndex = 3
 				DropdownLabel.ZIndex = 3
-				for _, v in pairs(DropdownBody:GetChildren()) do
+				for _, v in pairs(DropdownBody:GetChildren(), "Out", "Quad" 0.4, true) do
 					if v:IsA("TextButton") then
 						v.ZIndex = 2
 					end
@@ -360,7 +360,7 @@ function Library:Window(title)
 					}):Play();
 					for _, v in pairs(DropdownBody:GetChildren()) do
 						if v:IsA("TextButton") then
-							v:TweenSize(UDim2.new(1, 0, 0, 22))
+							v:TweenSize(UDim2.new(1, 0, 0, 22), "Out", "Quad" 0.4, true)
 							v.ZIndex = 4
 						end
 					end
@@ -390,13 +390,13 @@ function Library:Window(title)
 			DropdownOption.TextWrapped = true
 
 			DropdownOption.MouseButton1Down:connect(function()
-				DropdownBody:TweenSize(UDim2.fromScale(1, 0))
+				DropdownBody:TweenSize(UDim2.fromScale(1, 0), "Out", "Quad" 0.4, true)
 				game:GetService("TweenService"):Create(DropdownBody, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
 					Size = UDim2.fromScale(1, 0)
 				}):Play();
 				for _, v in pairs(DropdownBody:GetChildren()) do
 					if v:IsA("TextButton") then
-						v:TweenSize(UDim2.new(1, 0, 0, 0))
+						v:TweenSize(UDim2.new(1, 0, 0, 0), "Out", "Quad" 0.4, true)
 					end
 				end
 				wait(0.5)
