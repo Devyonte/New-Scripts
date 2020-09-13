@@ -53,7 +53,7 @@ function Library:Window(title)
 	Window.ImageColor3 = Color3.fromRGB(43, 43, 43)
 	Window.ScaleType = Enum.ScaleType.Slice
 	Window.SliceCenter = Rect.new(100, 100, 100, 100)
-	Window.SliceScale = 0.120
+	Window.SliceScale = 0.070
 	Window.Active = true
 	Window.Draggable = true
 
