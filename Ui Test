@@ -261,7 +261,7 @@ function Library:Window(title)
 		local Opened = false
 		local Dropdown = Instance.new("TextButton")
 		local DropdownLabel = Instance.new("TextLabel")
-		local Arrow2 = Instance.new("TextLabel")
+		local Arrow1 = Instance.new("TextLabel")
 		local DropdownBody = Instance.new("Frame")
 		local DropdownUIListLayout = Instance.new("UIListLayout")
 		local DropdownUIPadding = Instance.new("UIPadding")
@@ -300,20 +300,20 @@ function Library:Window(title)
 		DropdownLabel.TextSize = 14.000
 		DropdownLabel.TextWrapped = true
 
-		Arrow2.Name = "Arrow2"
-		Arrow2.Parent = Dropdown
-		Arrow2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Arrow2.BackgroundTransparency = 1.000
-		Arrow2.Position = UDim2.new(-0.0109999999, 0, -0.022830531, 0)
-		Arrow2.Rotation = 180.000
-		Arrow2.Size = UDim2.new(0, 16, 0, 21)
-		Arrow2.ZIndex = 3
-		Arrow2.Font = Enum.Font.SourceSans
-		Arrow2.Text = "^"
-		Arrow2.TextColor3 = Color3.fromRGB(234, 234, 234)
-		Arrow2.TextScaled = true
-		Arrow2.TextSize = 14.000
-		Arrow2.TextWrapped = true
+		Arrow1.Name = "Arrow1"
+		Arrow1.Parent = Dropdown
+		Arrow1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Arrow1.BackgroundTransparency = 1.000
+		Arrow1.Position = UDim2.new(0.815999985, 0, -0.022830531, 0)
+		Arrow1.Rotation = 180.000
+		Arrow1.Size = UDim2.new(0, 16, 0, 21)
+		Arrow1.ZIndex = 3
+		Arrow1.Font = Enum.Font.SourceSans
+		Arrow1.Text = "^"
+		Arrow1.TextColor3 = Color3.fromRGB(234, 234, 234)
+		Arrow1.TextScaled = true
+		Arrow1.TextSize = 14.000
+		Arrow1.TextWrapped = true
 
 		DropdownBody.Name = "DropdownBody"
 		DropdownBody.Parent = Dropdown
@@ -347,7 +347,6 @@ function Library:Window(title)
 				Opened = false
 				Dropdown.ZIndex = 3
 				Arrow1.ZIndex = 3
-				Arrow2.ZIndex = 3
 				DropdownLabel.ZIndex = 3
 				for _, v in pairs(DropdownBody:GetChildren()) do
 					if v:IsA("TextButton") then
@@ -367,7 +366,6 @@ function Library:Window(title)
 					end
 					Dropdown.ZIndex = 5
 					Arrow1.ZIndex = 5
-					Arrow2.ZIndex = 5
 					DropdownLabel.ZIndex = 5
 					DropdownBody.Visible = true
 					Opened = true
@@ -406,7 +404,6 @@ function Library:Window(title)
 				Opened = false
 				Dropdown.ZIndex = 3
 				Arrow1.ZIndex = 3
-				Arrow2.ZIndex = 3
 				DropdownLabel.ZIndex = 3
 				for _, v in pairs(DropdownBody:GetChildren()) do
 					if v:IsA("TextButton") then
