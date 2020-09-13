@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0nt3/New-Scripts/master/UILIB"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0nt3/New-Scripts/master/Modded%20Healy%20Remake"))()
 
 local b = Library:Window("Auto")
 local c = Library:Window("Teleports")
