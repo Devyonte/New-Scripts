@@ -1,0 +1,226 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TopFrame = Instance.new("Frame")
+local Timer = Instance.new("TextLabel")
+local TimerStop = Instance.new("TextButton")
+local TimerStart = Instance.new("TextButton")
+local TimerReset = Instance.new("TextButton")
+local Coolthing = Instance.new("Frame")
+local Exit = Instance.new("TextButton")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Frame.Position = UDim2.new(0.260408759, 0, 0.343980342, 0)
+Frame.Size = UDim2.new(0, 235, 0, 159)
+Frame.Active = true
+
+TopFrame.Name = "TopFrame"
+TopFrame.Parent = Frame
+TopFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+TopFrame.Size = UDim2.new(0, 235, 0, 20)
+
+Timer.Name = "Timer"
+Timer.Parent = TopFrame
+Timer.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Timer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Timer.BorderSizePixel = 0
+Timer.Position = UDim2.new(0.331914902, 0, 0.999999881, 0)
+Timer.Size = UDim2.new(0, 79, 0, 50)
+Timer.Font = Enum.Font.SourceSans
+Timer.Text = "0"
+Timer.TextColor3 = Color3.fromRGB(255, 255, 255)
+Timer.TextScaled = true
+Timer.TextSize = 14.000
+Timer.TextWrapped = true
+
+TimerStop.Name = "TimerStop"
+TimerStop.Parent = TopFrame
+TimerStop.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+TimerStop.Position = UDim2.new(0.553191483, 0, 3.79999995, 0)
+TimerStop.Size = UDim2.new(0, 87, 0, 33)
+TimerStop.Font = Enum.Font.SourceSans
+TimerStop.Text = "Stop (f2)"
+TimerStop.TextColor3 = Color3.fromRGB(255, 255, 255)
+TimerStop.TextScaled = true
+TimerStop.TextSize = 14.000
+TimerStop.TextWrapped = true
+
+TimerStart.Name = "TimerStart"
+TimerStart.Parent = TopFrame
+TimerStart.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+TimerStart.Position = UDim2.new(0.0765957236, 0, 3.79999995, 0)
+TimerStart.Size = UDim2.new(0, 87, 0, 33)
+TimerStart.Font = Enum.Font.SourceSans
+TimerStart.Text = "Start (f1)"
+TimerStart.TextColor3 = Color3.fromRGB(255, 255, 255)
+TimerStart.TextScaled = true
+TimerStart.TextSize = 14.000
+TimerStart.TextWrapped = true
+
+TimerReset.Name = "TimerReset"
+TimerReset.Parent = TopFrame
+TimerReset.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+TimerReset.Position = UDim2.new(0.297872305, 0, 5.89999962, 0)
+TimerReset.Size = UDim2.new(0, 87, 0, 33)
+TimerReset.Font = Enum.Font.SourceSans
+TimerReset.Text = "Reset"
+TimerReset.TextColor3 = Color3.fromRGB(255, 255, 255)
+TimerReset.TextScaled = true
+TimerReset.TextSize = 14.000
+TimerReset.TextWrapped = true
+
+Coolthing.Name = "Coolthing"
+Coolthing.Parent = TopFrame
+Coolthing.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Coolthing.BorderSizePixel = 0
+Coolthing.Position = UDim2.new(0, 0, 1, 0)
+Coolthing.Size = UDim2.new(0, 235, 0, 3.5)
+
+Exit.Name = "Exit"
+Exit.Parent = TopFrame
+Exit.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Exit.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Exit.BorderSizePixel = 0
+Exit.Position = UDim2.new(0.880851209, 0, 0, 0)
+Exit.Size = UDim2.new(0, 28, 0, 20)
+Exit.Font = Enum.Font.SourceSans
+Exit.Text = "X"
+Exit.TextColor3 = Color3.fromRGB(255, 255, 255)
+Exit.TextScaled = true
+Exit.TextSize = 14.000
+Exit.TextWrapped = true
+
+-- Scripts:
+
+local function NLYV_fake_script() -- TimerStart.Script 
+	local script = Instance.new('Script', TimerStart)
+
+	local Start = script.Parent
+	local Stop = script.Parent.Parent.TimerStop
+	local Timer = script.Parent.Parent.Timer
+	local Toggle = true
+	
+	function onKeyPress(inputObject, gameProcessedEvent)
+    if inputObject.KeyCode == Enum.KeyCode.F1 then
+    while Toggle do
+    Timer.Text = Timer.Text + 0.1 
+    wait(0.1)
+    end
+    Toggle = true
+    end
+    end
+    game:GetService("UserInputService").InputBegan:connect(onKeyPress)
+	
+	function onKeyPress(inputObject, gameProcessedEvent)
+    if inputObject.KeyCode == Enum.KeyCode.F2 then
+     Toggle = false
+    end
+    end
+    game:GetService("UserInputService").InputBegan:connect(onKeyPress)
+	
+	Start.MouseButton1Click:Connect(function()
+		while Toggle do
+			Timer.Text = Timer.Text + 0.1 
+			wait(0.1)
+		end
+		Toggle = true
+	end)
+	Stop.MouseButton1Click:Connect(function()
+		Toggle = false
+	end)
+end
+coroutine.wrap(NLYV_fake_script)()
+local function NZDP_fake_script() -- TimerReset.Script 
+	local script = Instance.new('Script', TimerReset)
+
+	local T = script.Parent
+	local Timer = script.Parent.Parent.Timer
+	
+	T.MouseButton1Click:Connect(function()
+		Timer.Text = "0"
+	end)
+end
+coroutine.wrap(NZDP_fake_script)()
+local function UBLV_fake_script() -- Coolthing.Script 
+	local script = Instance.new('Script', Coolthing)
+
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	 
+	counter = 0
+	 
+	while wait(0.1)do
+	 script.Parent.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	 
+	 counter = counter + 0.01
+	end
+end
+coroutine.wrap(UBLV_fake_script)()
+local function OCUK_fake_script() -- Exit.Script 
+	local script = Instance.new('Script', Exit)
+
+	local Exit = script.Parent
+	local Frame = script.Parent.Parent.Parent.Parent.Frame
+	local Stop = script.Parent.Parent.TimerStop
+	local Start = script.Parent.Parent.TimerStart
+	local Reset = script.Parent.Parent.TimerReset
+	local Timer = script.Parent.Parent.Timer
+	local Top = script.Parent.Parent.Parent.TopFrame
+	local Cool = script.Parent.Parent.Coolthing
+	
+	Exit.MouseButton1Click:Connect(function()
+		Cool.Visible = false
+		Top.Visible = false
+		Timer.Visible = false
+		Reset.Visible = false
+		Start.Visible = false
+		Stop.Visible = false
+		Frame:TweenSize(UDim2.new(0, 0, 0, 0))
+		wait(0.8)
+		Frame.Visible = false
+	end)
+end
+coroutine.wrap(OCUK_fake_script)()
+
+function dragify(Frame)
+dragToggle = nil
+dragSpeed = .25 -- You can edit this.
+dragInput = nil
+dragStart = nil
+dragPos = nil
+
+function updateInput(input)
+Delta = input.Position - dragStart
+Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+game:GetService("TweenService"):Create(Frame, TweenInfo.new(.25), {Position = Position}):Play()
+end
+
+Frame.InputBegan:Connect(function(input)
+if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+dragToggle = true
+dragStart = input.Position
+startPos = Frame.Position
+input.Changed:Connect(function()
+if (input.UserInputState == Enum.UserInputState.End) then
+dragToggle = false
+end
+end)
+end
+end)
+
+Frame.InputChanged:Connect(function(input)
+if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+dragInput = input
+end
+end)
+
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+if (input == dragInput and dragToggle) then
+updateInput(input)
+end
+end)
+end
+
+dragify(Frame)
