@@ -13,54 +13,8 @@ end)
 b:Toggle("Auto Rebirth",function(bool)
     autore = bool
 end)
-a:Button("Collect Flowers",function(bool)
-   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3150.06665, -97.4007034, -2937.81519) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3188.97363, -97.4007034, -2996.1145) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3277.17041, -97.4007034, -2987.75317) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3316.67969, -97.4007034, -2924.60352) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3220.48999, -97.4007034, -2792.45386) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3301.5896, -97.4007034, -3077.36255) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3158.91406, -97.4007034, -3316.59595) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2943.8374, -97.4007034, -3289.77832) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2806.4939, -97.4007034, -3186.52979) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2758.63867, -97.4006958, -2998.81152) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2803.96216, -97.4006958, -2910.78662) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2848.68677, -97.4006958, -2810.50439) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2944.62549, -97.4007034, -2845.53955) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2991.76758, -97.4007034, -2955.24243) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2905.9624, -97.4007034, -3090.71851) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2984.56104, -97.4006958, -3150.21509) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3237.61353, -97.6910782, -3033.66943) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2865.58618, -97.6910782, -2859.91064) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2906.09399, -21.5743198, -2923.4729) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3255.33032, -21.5743179, -2865.8623) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3243.23877, -97.6910782, -3038.10425) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2945.37134, -97.6910782, -3153.65259) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3084.46851, 19.2958221, -3100.11133) + Vector3.new(1,0,0)
-    wait()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2891.33081, -21.5743179, -3207.47168) + Vector3.new(1,0,0)
+b:Toggle("Collect Flowers",function(bool)
+   AutoFlower = bool
 end)
 
 a:Button("Collect Chests",function(bool)
@@ -115,6 +69,19 @@ spawn (function()
                 game:GetService("ReplicatedStorage").Events.Rebirth:InvokeServer()
 end
 end
+end)
+
+spawn (function()
+        while wait() do
+            if AutoFlower then
+                	for i,v in pairs(Workspace.Flowers:GetDescendants()) do
+			    if v.Name == "Main" then
+			       v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			       wait()
+			    end
+			end
+		end
+	end
 end)
 
 spawn (function()
