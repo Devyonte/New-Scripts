@@ -1,0 +1,216 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/NarwhalHacks/DevonteSite/master/Ui%20Lib"))()
+
+local a = Library:Window("Ninja Legends")
+
+local b = a:Tab("Farming")
+local d = a:Tab("Buying")
+local c = a:Tab("Misc")
+local e = a:Tab("Credits")
+local Player = game:GetService("Players").LocalPlayer
+
+b:Toggle("Auto Swing", function(bool)
+    AutoSwing = bool
+end)
+
+b:Toggle("Auto Sell", function(bool)
+    AutoSell = bool
+end)
+
+b:Label("Auto Farm Bosses")
+
+b:Toggle("Robot Boss", function(bool)
+    RobotBoss = bool
+end)
+
+b:Toggle("Eternal Boss", function(bool)
+    EternalBoss = bool
+end)
+
+b:Toggle("Ancient Magma Boss", function(bool)
+    AncientMagmaBoss = bool
+end)
+
+c:Toggle("Inf Jumps", function(bool)
+    InfJump = bool
+end)
+
+d:Toggle("Auto Buy Swords", function(bool)
+    AutoSword = bool
+end)
+
+d:Toggle("Auto Buy Belts", function(bool)
+    AutoBelt = bool
+end)
+
+c:Button("Unlock All Islands", function()
+    for i,v in pairs(Workspace.islandUnlockParts:GetChildren()) do
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+        wait()
+    end
+end)
+
+e:Label("UI : Devonte")
+
+e:Label("Scripting : Devonte")
+
+e:Button("Discord Server", function()
+    setclipboard("http://narwhalhacks.xyz/discord.php")
+end)
+
+spawn(function()
+    while wait() do
+        if AutoSwing then
+            for i,v in pairs(Player:GetDescendants()) do
+                if v.Name == "attackKatanaScript" then
+                    local Tool = v.Parent
+                    if v.Parent:IsA("Tool") then
+                        if Tool.Parent == Player.Character then
+                            Tool.Parent = Player.Backpack
+                            wait()
+                        else
+                            Tool.Parent = Player.Character
+                            wait()
+                        end
+                    end
+                end
+            end
+            game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if AutoSell then
+            for i,v in pairs(Workspace.sellAreaCircles:GetDescendants()) do
+                if v.Parent.Name == "sellAreaCircle12" and v:IsA("Part") and v.Name == "circleInner" then
+                    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    wait()
+                    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0, 100, 0)
+                    wait()
+                end
+            end
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if InfJump then
+            game:GetService("UserInputService").JumpRequest:connect(function()
+            	game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            end)
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if AutoSword then
+            local args = {
+                [1] = "buyAllSwords",
+                [2] = "Inner Peace Island"
+            }
+            
+            game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(unpack(args))
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if AutoBelt then
+            local args = {
+                [1] = "buyAllBelts",
+                [2] = "Inner Peace Island"
+            }
+            
+            game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(unpack(args))
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if RobotBoss then
+            for i,v in pairs(Workspace:GetDescendants()) do
+                if v.Name == "HumanoidRootPart" and v:IsA("Part") and v.Parent.Name == "RobotBoss" then
+                    local Player = game:GetService("Players").LocalPlayer
+                        for i,v in pairs(Player:GetDescendants()) do
+                            if v.Name == "attackKatanaScript" then
+                                local Tool = v.Parent
+                                if v.Parent:IsA("Tool") then
+                                    if Tool.Parent == Player.Character then
+                                        Tool.Parent = Player.Backpack
+                                        wait()
+                                    else
+                                        Tool.Parent = Player.Character
+                                        wait()
+                                    end
+                                end
+                        end
+                    end
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                    game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
+                    game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+                end
+            end
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if EternalBoss then
+            for i,v in pairs(Workspace:GetDescendants()) do
+                if v.Name == "HumanoidRootPart" and v:IsA("Part") and v.Parent.Name == "EternalBoss" then
+                    for i,v in pairs(Player:GetDescendants()) do
+                            if v.Name == "attackKatanaScript" then
+                                local Tool = v.Parent
+                                if v.Parent:IsA("Tool") then
+                                    if Tool.Parent == Player.Character then
+                                        Tool.Parent = Player.Backpack
+                                        wait()
+                                    else
+                                        Tool.Parent = Player.Character
+                                        wait()
+                                    end
+                                end
+                        end
+                    end
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                    game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
+                    game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+                end
+            end
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if AncientMagmaBoss then
+            for i,v in pairs(Workspace:GetDescendants()) do
+                if v.Name == "HumanoidRootPart" and v:IsA("Part") and v.Parent.Name == "AncientMagmaBoss" then
+                        for i,v in pairs(Player:GetDescendants()) do
+                            if v.Name == "attackKatanaScript" then
+                                local Tool = v.Parent
+                                if v.Parent:IsA("Tool") then
+                                    if Tool.Parent == Player.Character then
+                                        Tool.Parent = Player.Backpack
+                                        wait()
+                                    else
+                                        Tool.Parent = Player.Character
+                                        wait()
+                                    end
+                                end
+                        end
+                    end
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                    game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
+                    game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+                end
+            end
+        end
+    end
+end)
