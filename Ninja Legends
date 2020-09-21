@@ -57,6 +57,18 @@ e:Button("Discord Server", function()
     setclipboard("http://narwhalhacks.xyz/discord.php")
 end)
 
+c:Toggle("Disable Notifications", function(bool)
+    DisNoti = bool
+end)
+
+spawn(function()
+    while wait() do
+        if DisNoti then
+            game.Players.LocalPlayer.PlayerGui.statEffectsGui:Destroy()
+        end
+    end
+end)
+
 spawn(function()
     while wait() do
         if AutoSwing then
