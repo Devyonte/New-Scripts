@@ -1,9 +1,11 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0nt3/New-Scripts/master/Modded%20Healy%20Remake"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/NarwhalHacks/DevonteSite/master/Ui%20Lib"))()
 
-local b = Library:Window("Items")
-local c = Library:Window("Teleports")
-local d = Library:Window("Purchase")
-local a = Library:Window("Misc")
+local Win = Library:Window("Break-In")
+
+local b = e:Tab("Items")
+local c = e:Tab("Teleports")
+local d = e:Tab("Purchase")
+local a = e:Tab("Misc")
 localplyer = game.Players.LocalPlayer.Name
 
 a:Toggle("GodMode", function(bool)
