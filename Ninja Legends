@@ -16,7 +16,7 @@ b:Toggle("Auto Sell", function(bool)
     AutoSell = bool
 end)
 
-b:Label("Auto Farm Bosses")
+b:Label("- Auto Farm Bosses -")
 
 b:Toggle("Robot Boss", function(bool)
     RobotBoss = bool
