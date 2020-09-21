@@ -42,6 +42,10 @@ d:Toggle("Auto Buy Belts", function(bool)
     AutoBelt = bool
 end)
 
+c:Button("Disable Notifications", function()
+    game.Players.LocalPlayer.PlayerGui.statEffectsGui:Destroy()
+end)
+
 c:Button("Unlock All Islands", function()
     for i,v in pairs(Workspace.islandUnlockParts:GetChildren()) do
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
@@ -55,18 +59,6 @@ e:Label("Scripting : Devonte")
 
 e:Button("Discord Server", function()
     setclipboard("http://narwhalhacks.xyz/discord.php")
-end)
-
-c:Toggle("Disable Notifications", function(bool)
-    DisNoti = bool
-end)
-
-spawn(function()
-    while wait() do
-        if DisNoti then
-            game.Players.LocalPlayer.PlayerGui.statEffectsGui:Destroy()
-        end
-    end
 end)
 
 spawn(function()
