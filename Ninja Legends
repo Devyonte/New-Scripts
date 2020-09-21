@@ -4,6 +4,7 @@ local a = Library:Window("Ninja Legends")
 
 local b = a:Tab("Farming")
 local d = a:Tab("Buying")
+local f = a:Tab("Player")
 local c = a:Tab("Misc")
 local e = a:Tab("Credits")
 local Player = game:GetService("Players").LocalPlayer
@@ -42,6 +43,14 @@ d:Toggle("Auto Buy Belts", function(bool)
     AutoBelt = bool
 end)
 
+d:Toggle("Auto Buy Skills", function(bool)
+    AutoSkills = bool
+end)
+
+d:Toggle("Auto Buy Shurikens", function(bool)
+    AutoShurikens = bool
+end)
+
 c:Button("Disable Notifications", function()
     game.Players.LocalPlayer.PlayerGui.statEffectsGui:Destroy()
 end)
@@ -59,6 +68,18 @@ e:Label("Scripting : Devonte")
 
 e:Button("Discord Server", function()
     setclipboard("http://narwhalhacks.xyz/discord.php")
+end)
+
+f:Slider("WalkSpeed", 16, 200, 0, function(value)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+end)
+
+f:Slider("JumpPower", 50, 500, 0, function(value)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
+end)
+
+f:Slider("Gravity", 0, 196, 196, function(value)
+    game.Workspace.Gravity = value
 end)
 
 spawn(function()
@@ -136,6 +157,32 @@ end)
 
 spawn(function()
     while wait() do
+        if AutoSkills then
+            local args = {
+                [1] = "buyAllSkills",
+                [2] = "Inner Peace Island"
+            }
+            
+            game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(unpack(args))
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if AutoShurikens then
+            local args = {
+                [1] = "buyAllShurikens",
+                [2] = "Inner Peace Island"
+            }
+            
+            game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(unpack(args))
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
         if RobotBoss then
             for i,v in pairs(Workspace:GetDescendants()) do
                 if v.Name == "HumanoidRootPart" and v:IsA("Part") and v.Parent.Name == "RobotBoss" then
@@ -155,11 +202,9 @@ spawn(function()
                         end
                     end
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-                    wait()
-                    game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
-                    wait()
                     game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
                     wait()
+                    game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
                 end
             end
         end
@@ -186,11 +231,9 @@ spawn(function()
                         end
                     end
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-                    wait()
-                    game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
-                    wait()
                     game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
                     wait()
+                    game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
                 end
             end
         end
@@ -217,11 +260,9 @@ spawn(function()
                         end
                     end
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-                    wait()
-                    game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
-                    wait()
                     game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
                     wait()
+                    game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
                 end
             end
         end
