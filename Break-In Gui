@@ -28,21 +28,24 @@ a:Button("Remove Tools", function()
     end
 end
 end)
+
 a:Button("Kill Enemies", function()
        for i,v in pairs(game.Workspace.BadGuys:GetChildren()) do
           game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v, 8)
      end
-end
 end)
+
 a:Button("Unlock Basement", function()
    game.ReplicatedStorage.RemoteEvents.UnlockDoor:FireServer()
 end)
+
 a:Button("Police (In Spawn)", function()
     local A_1 = "Gun"
     local A_2 = true
     local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
     Event:FireServer(A_1, A_2)
 end)
+
 a:Button("The Hyper (In Spawn)", function()
     local args = {
     [1] = "Lollipop",
