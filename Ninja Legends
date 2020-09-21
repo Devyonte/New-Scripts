@@ -155,8 +155,11 @@ spawn(function()
                         end
                     end
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                    wait()
                     game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
+                    wait()
                     game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+                    wait()
                 end
             end
         end
@@ -183,8 +186,11 @@ spawn(function()
                         end
                     end
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                    wait()
                     game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
+                    wait()
                     game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+                    wait()
                 end
             end
         end
@@ -211,8 +217,11 @@ spawn(function()
                         end
                     end
                     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+                    wait()
                     game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
+                    wait()
                     game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+                    wait()
                 end
             end
         end
