@@ -74,7 +74,7 @@ f:Slider("WalkSpeed", 16, 200, 0, function(value)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
 end)
 
-f:Slider("JumpPower", 50, 500, 50, function(value)
+f:Slider("JumpPower", 50, 500, 0, function(value)
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
 end)
 
