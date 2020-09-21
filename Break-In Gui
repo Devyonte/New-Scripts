@@ -2,10 +2,10 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Narwh
 
 local Win = Library:Window("Break-In")
 
-local b = e:Tab("Items")
-local c = e:Tab("Teleports")
-local d = e:Tab("Purchase")
-local a = e:Tab("Misc")
+local b = Win:Tab("Items")
+local c = Win:Tab("Teleports")
+local d = Win:Tab("Purchase")
+local a = Win:Tab("Misc")
 localplyer = game.Players.LocalPlayer.Name
 
 a:Toggle("GodMode", function(bool)
