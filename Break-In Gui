@@ -9,6 +9,9 @@ localplyer = game.Players.LocalPlayer.Name
 a:Toggle("GodMode", function(bool)
     GodMode = bool
 end)
+a:Toggle("Kill Enemies", function(bool)
+    KillEnemies = bool
+end)
 a:Button("Befriend Cat", function()
    game:GetService("ReplicatedStorage").RemoteEvents.Cattery:FireServer()
 end)
@@ -29,12 +32,6 @@ a:Button("Remove Tools", function()
 end
 end)
 
-a:Button("Kill Enemies", function()
-       for i,v in pairs(game.Workspace.BadGuys:GetChildren()) do
-          game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v, 8)
-     end
-end)
-
 a:Button("Unlock Basement", function()
    game.ReplicatedStorage.RemoteEvents.UnlockDoor:FireServer()
 end)
@@ -53,14 +50,14 @@ a:Button("The Hyper (In Spawn)", function()
 }
 
 game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole:FireServer(unpack(args))
-
-b:Button("Heal All", function()
-   for i,v in pairs(game:GetService("Players"):GetChildren()) do
-   game:GetService("ReplicatedStorage").RemoteEvents.HealPlayer:FireServer(v)
-end 
 end)
 
+a:Button("Heal All", function()
+    for i,v in pairs(game:GetService("Players"):GetChildren()) do
+        game:GetService("ReplicatedStorage").RemoteEvents.HealPlayer:FireServer(v)
+    end 
 end)
+
 b:Button("Apple", function()
    game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Apple") 
 end)
@@ -118,7 +115,15 @@ end)
 d:Button("Buy Cure", function()
    game:GetService("ReplicatedStorage").RemoteEvents.BuyItem:FireServer("Cure")
 end)
-
+spawn (function()
+    while wait() do
+       if KillEnemies then
+            for i,v in pairs(game.Workspace.BadGuys:GetChildren()) do
+                    game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v, 8)
+            end
+       end
+    end
+end)
 
 spawn (function()
     while wait() do
