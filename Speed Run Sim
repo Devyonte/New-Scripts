@@ -26,49 +26,13 @@ b:Toggle("Auto Race", function(bool)
     AutoRace = bool
 end)
 
-e:Button("Main Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1369.56689, 196.96228, -404.980408) + Vector3.new(1,0,0)
-end)
-
-e:Button("Desert Area", function()
-     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(2274.83398, 196.96228, -655.149414) + Vector3.new(1,0,0)
-end)
-
-e:Button("Frozen Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3163.4314, 196.96228, -664.252075) + Vector3.new(1,0,0)
-end)
-
-e:Button("Lava Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4419.70166, 196.96228, -646.82428) + Vector3.new(1,0,0)
-end)
-
-e:Button("Spooky Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5556.54102, 197.083649, -647.255554) + Vector3.new(1,0,0)
-end)
-
-e:Button("Crown Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6482.15918, 197.107452, -660.254028) + Vector3.new(1,0,0)
-end)
-
-e:Button("Candy Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7542.1499, 196.96228, -661.608337) + Vector3.new(1,0,0)
-end)
-
-e:Button("Space Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8754.71582, 196.96228, -643.398682) + Vector3.new(1,0,0)
-end)
-
-e:Button("Spongebob Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9963.91895, 197.107452, -650.884033) + Vector3.new(1,0,0)
-end)
-
-e:Button("VIP Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1384.4082, 196.96228, -1576.16479) + Vector3.new(1,0,0)
-end)
-
-e:Button("Cloud Area", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1097.27539, 197.115692, -544.340149) + Vector3.new(1,0,0)
-end)
+for i,v in pairs(Workspace.Teleports:GetChildren()) do
+    if v.Name ~= "Spawn" then
+        e:Button(v.Name, function()
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+        end)
+    end
+end
 
 e:Button("Race End", function()
     for i,v in pairs(game.Workspace:GetDescendants()) do
