@@ -401,8 +401,8 @@ function Library:CreateTab(name)
 				Text = "",
 				TextColor3 = Color3.fromRGB(220, 220, 220),
 				TextSize = 16,
-				TextStrokeTransparency = 0.4
 				ClipsDescendants = true
+				TextStrokeTransparency = 0.4
 			}, 8)
 		})
 		function Box:Set(str)
