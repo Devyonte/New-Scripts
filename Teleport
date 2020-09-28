@@ -1,0 +1,205 @@
+for i,v in pairs(game.CoreGui:GetChildren()) do
+    if v.Name == "TpGui" then
+        v:Destroy() 
+    end
+end
+
+local TpGui = Instance.new("ScreenGui")
+local Top = Instance.new("Frame")
+local Main = Instance.new("Frame")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local UIPadding = Instance.new("UIPadding")
+local UICorner_3 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local UICorner_4 = Instance.new("UICorner")
+
+TpGui.Name = "TpGui"
+TpGui.Parent = game.CoreGui
+
+Top.Name = "Top"
+Top.Parent = TpGui
+Top.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Top.BorderSizePixel = 0
+Top.Position = UDim2.new(0.373292863, 0, 0.417690426, 0)
+Top.Size = UDim2.new(0, 316, 0, 29)
+Top.Active = true
+
+Main.Name = "Main"
+Main.Parent = Top
+Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0, 0, 1, 0)
+Main.Size = UDim2.new(0, 316, 0, 212)
+
+ScrollingFrame.Parent = Main
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Size = UDim2.new(0, 316, 0, 212)
+ScrollingFrame.BottomImage = ""
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 5, 0)
+ScrollingFrame.HorizontalScrollBarInset = Enum.ScrollBarInset.ScrollBar
+ScrollingFrame.ScrollBarThickness = 0
+ScrollingFrame.TopImage = ""
+ScrollingFrame.VerticalScrollBarInset = Enum.ScrollBarInset.ScrollBar
+
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 1)
+
+UIPadding.Parent = ScrollingFrame
+UIPadding.PaddingTop = UDim.new(0, 4)
+
+UICorner_3.CornerRadius = UDim.new(0, 2)
+UICorner_3.Parent = Main
+
+Title.Name = "Title"
+Title.Parent = Top
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0, 0, 0.137931034, 0)
+Title.Size = UDim2.new(0, 316, 0, 21)
+Title.Font = Enum.Font.GothamSemibold
+Title.Text = "Teleport"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+UICorner_4.CornerRadius = UDim.new(0, 2)
+UICorner_4.Parent = Top
+
+function dragify(Frame)
+	dragToggle = nil
+	dragSpeed = .25 -- You can edit this.
+	dragInput = nil
+	dragStart = nil
+	dragPos = nil
+	
+	function updateInput(input)
+		Delta = input.Position - dragStart
+		Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+		game:GetService("TweenService"):Create(Frame, TweenInfo.new(.25), {Position = Position}):Play()
+	end
+	
+	Frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+			dragToggle = true
+			dragStart = input.Position
+			startPos = Frame.Position
+			input.Changed:Connect(function()
+				if (input.UserInputState == Enum.UserInputState.End) then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	Frame.InputChanged:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+			dragInput = input
+		end
+	end)
+	
+	game:GetService("UserInputService").InputChanged:Connect(function(input)
+		if (input == dragInput and dragToggle) then
+			updateInput(input)
+		end
+	end)
+end
+
+dragify(Top)
+
+function CreateTp(name, callback)
+	local TpBack = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local TpName = Instance.new("TextLabel")
+	local Tp = Instance.new("TextButton")
+	local TpName2 = Instance.new("TextLabel")
+	local TpAni = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local UIListLayout_2 = Instance.new("UIListLayout")
+	
+	TpBack.Name = "TpBack"
+	TpBack.Parent = ScrollingFrame
+	TpBack.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+	TpBack.Position = UDim2.new(0.0126582282, 0, 0.0132075474, 0)
+	TpBack.Size = UDim2.new(0, 308, 0, 29)
+	
+	UICorner.CornerRadius = UDim.new(0, 2)
+	UICorner.Parent = TpBack
+	
+	TpName.Name = "TpName"
+	TpName.Parent = TpBack
+	TpName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TpName.BackgroundTransparency = 1.000
+	TpName.Position = UDim2.new(0.0284810252, 0, 0.137931034, 0)
+	TpName.Size = UDim2.new(0, 249,0, 21)
+	TpName.Font = Enum.Font.GothamSemibold
+	TpName.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TpName.TextScaled = true
+	TpName.TextSize = 14.000
+	TpName.TextWrapped = true
+	TpName.TextXAlignment = Enum.TextXAlignment.Left
+	TpName.Text = name
+	
+	Tp.Name = "Tp"
+	Tp.Parent = TpBack
+	Tp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Tp.BackgroundTransparency = 1.000
+	Tp.Size = UDim2.new(0, 308, 0, 29)
+	Tp.ZIndex = 3
+	Tp.Font = Enum.Font.SourceSans
+	Tp.Text = ""
+	Tp.TextColor3 = Color3.fromRGB(0, 0, 0)
+	Tp.TextSize = 14.000
+	Tp.MouseButton1Click:Connect(function()
+		callback()
+	end)
+	
+	TpName2.Name = "TpName2"
+	TpName2.Parent = TpBack
+	TpName2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TpName2.BackgroundTransparency = 1.000
+	TpName2.Position = UDim2.new(0.839691937, 0, 0.137931034, 0)
+	TpName2.Size = UDim2.new(0, 41, 0, 21)
+	TpName2.ZIndex = 2
+	TpName2.Font = Enum.Font.GothamSemibold
+	TpName2.Text = "Go"
+	TpName2.TextColor3 = Color3.fromRGB(255, 255, 255)
+	TpName2.TextScaled = true
+	TpName2.TextSize = 14.000
+	TpName2.TextWrapped = true
+	
+	TpAni.Name = "TpAni"
+	TpAni.Parent = TpName2
+	TpAni.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
+	TpAni.Position = UDim2.new(-0.131008089, 0, -0.0180623978, 0)
+	
+	UIListLayout_2.Parent = TpName2
+    UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+    UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
+	
+	UICorner_2.Parent = TpAni
+	
+	Tp.MouseButton1Click:Connect(function()
+		TpAni:TweenSize(UDim2.new(0, 50,0, 20), "InOut", "Quad", 0.3, true)
+		wait(0.5)
+		TpAni:TweenSize(UDim2.new(0, 0, 0, 0), "InOut", "Quad", 0.3, true)
+	end)
+end
+
+for i,v in pairs(game.Players:GetChildren()) do
+	if v.Name ~= game.Players.LocalPlayer.Name then
+		CreateTp(v.Name, function()
+		    local Person = v.Name
+    		local plr1 = game.Players.LocalPlayer.Character
+    		local plr2 = game.Workspace:FindFirstChild(Person)
+    		plr1.HumanoidRootPart.CFrame = plr2.HumanoidRootPart.CFrame * CFrame.new(0,2,0) 
+		end)
+	end
+end
