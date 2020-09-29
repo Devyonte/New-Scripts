@@ -57,7 +57,7 @@ end)
 
 c:Button("Unlock All Islands", function()
     for i,v in pairs(Workspace.islandUnlockParts:GetChildren()) do
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+        v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         wait()
     end
 end)
