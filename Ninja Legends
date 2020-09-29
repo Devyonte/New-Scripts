@@ -57,6 +57,10 @@ c:Button("Disable Notifications", function()
     game.Players.LocalPlayer.PlayerGui.statEffectsGui:Destroy()
 end)
 
+c:Toggle("Particle Effect", function(bool)
+    Parteff = bool
+end)
+
 c:Button("Unlock All Islands", function()
     for i,v in pairs(Workspace.islandUnlockParts:GetChildren()) do
         v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -102,6 +106,19 @@ spawn(function()
                 end
             end
             game:GetService("Players").LocalPlayer.ninjaEvent:FireServer("swingKatana")
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if Parteff then
+            for i ,v in pairs(game.Workspace:GetDescendants()) do
+                if v.Name == "chestParticlePart" and v:IsA("Part") then
+                    v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame 
+                    wait()
+                end
+            end
         end
     end
 end)
