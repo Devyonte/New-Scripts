@@ -31,8 +31,10 @@ b:Toggle("Ancient Magma Boss", function(bool)
     AncientMagmaBoss = bool
 end)
 
-c:Toggle("Inf Jumps", function(bool)
-    InfJump = bool
+c:Button("Inf Jumps", function(bool)
+    game:GetService("UserInputService").JumpRequest:connect(function()
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+    end)
 end)
 
 d:Toggle("Auto Buy Swords", function(bool)
@@ -115,16 +117,6 @@ spawn(function()
                     wait()
                 end
             end
-        end
-    end
-end)
-
-spawn(function()
-    while wait() do
-        if InfJump then
-            game:GetService("UserInputService").JumpRequest:connect(function()
-            	game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-            end)
         end
     end
 end)
