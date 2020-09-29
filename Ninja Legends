@@ -57,15 +57,15 @@ c:Button("Disable Notifications", function()
     game.Players.LocalPlayer.PlayerGui.statEffectsGui:Destroy()
 end)
 
-c:Toggle("Particle Effect", function(bool)
-    Parteff = bool
-end)
-
 c:Button("Unlock All Islands", function()
     for i,v in pairs(Workspace.islandUnlockParts:GetChildren()) do
         v.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         wait()
     end
+end)
+
+c:Toggle("Particle Effect", function(bool)
+    Parteff = bool
 end)
 
 e:Label("UI : Devonte")
