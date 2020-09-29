@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0nt3/New-Scripts/master/Modded%20Healy%20Remake"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/NarwhalHacks/DevonteSite/master/Ui%20Lib"))()
 
 local a = Library:Window("Sword Simulator 3")
 
