@@ -1,7 +1,9 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/D3v0nt3/New-Scripts/master/Modded%20Healy%20Remake"))()
 
-local b = Library:Window("Auto Farm")
-local c = Library:Window("Teleports")
+local a = Library:Window("Sword Simulator 3")
+
+local b = a:Tab("Auto Farm")
+local c = a:Tab("Teleports")
 
 b:Toggle("Auto Swing",function(bool)
     Swing = bool
