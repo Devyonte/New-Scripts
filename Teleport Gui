@@ -122,7 +122,6 @@ function CreateTp(name, callback)
 	local TpAni = Instance.new("Frame")
 	local UICorner_2 = Instance.new("UICorner")
 	local UIListLayout_2 = Instance.new("UIListLayout")
-	local UICorner_5 = Instance.new("UICorner")
 	
 	TpBack.Name = "TpBack"
 	TpBack.Parent = ScrollingFrame
@@ -147,8 +146,6 @@ function CreateTp(name, callback)
 	TpName.TextXAlignment = Enum.TextXAlignment.Left
 	TpName.Text = name
 	
-	UICorner_5.Parent = TpName2
-	
 	Tp.Name = "Tp"
 	Tp.Parent = TpBack
 	Tp.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -166,7 +163,7 @@ function CreateTp(name, callback)
 	TpName2.Name = "TpName2"
 	TpName2.Parent = TpBack
 	TpName2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	TpName2.BackgroundTransparency = 0
+	TpName2.BackgroundTransparency = 1
 	TpName2.Position = UDim2.new(0.839691937, 0, 0.137931034, 0)
 	TpName2.Size = UDim2.new(0, 41, 0, 21)
 	TpName2.ZIndex = 2
