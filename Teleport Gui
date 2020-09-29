@@ -136,7 +136,7 @@ function CreateTp(name, callback)
 	TpName.Name = "TpName"
 	TpName.Parent = TpBack
 	TpName.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-	TpName.BackgroundTransparency = 0
+	TpName.BackgroundTransparency = 1
 	TpName.Position = UDim2.new(0.0284810252, 0, 0.137931034, 0)
 	TpName.Size = UDim2.new(0, 249,0, 21)
 	TpName.Font = Enum.Font.GothamSemibold
@@ -147,7 +147,7 @@ function CreateTp(name, callback)
 	TpName.TextXAlignment = Enum.TextXAlignment.Left
 	TpName.Text = name
 	
-	UICorner_5.Parent = TpName
+	UICorner_5.Parent = TpName2
 	
 	Tp.Name = "Tp"
 	Tp.Parent = TpBack
@@ -165,8 +165,8 @@ function CreateTp(name, callback)
 	
 	TpName2.Name = "TpName2"
 	TpName2.Parent = TpBack
-	TpName2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TpName2.BackgroundTransparency = 1.000
+	TpName2.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+	TpName2.BackgroundTransparency = 0
 	TpName2.Position = UDim2.new(0.839691937, 0, 0.137931034, 0)
 	TpName2.Size = UDim2.new(0, 41, 0, 21)
 	TpName2.ZIndex = 2
