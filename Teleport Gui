@@ -122,6 +122,7 @@ function CreateTp(name, callback)
 	local TpAni = Instance.new("Frame")
 	local UICorner_2 = Instance.new("UICorner")
 	local UIListLayout_2 = Instance.new("UIListLayout")
+	local UICorner_5 = Instance.new("UICorner")
 	
 	TpBack.Name = "TpBack"
 	TpBack.Parent = ScrollingFrame
@@ -134,8 +135,8 @@ function CreateTp(name, callback)
 	
 	TpName.Name = "TpName"
 	TpName.Parent = TpBack
-	TpName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	TpName.BackgroundTransparency = 1.000
+	TpName.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+	TpName.BackgroundTransparency = 0
 	TpName.Position = UDim2.new(0.0284810252, 0, 0.137931034, 0)
 	TpName.Size = UDim2.new(0, 249,0, 21)
 	TpName.Font = Enum.Font.GothamSemibold
@@ -145,6 +146,8 @@ function CreateTp(name, callback)
 	TpName.TextWrapped = true
 	TpName.TextXAlignment = Enum.TextXAlignment.Left
 	TpName.Text = name
+	
+	UICorner_5.Parent = TpName
 	
 	Tp.Name = "Tp"
 	Tp.Parent = TpBack
@@ -180,9 +183,9 @@ function CreateTp(name, callback)
 	TpAni.Position = UDim2.new(-0.131008089, 0, -0.0180623978, 0)
 	
 	UIListLayout_2.Parent = TpName2
-    UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
-    UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-    UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
+    	UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    	UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+    	UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
 	
 	UICorner_2.Parent = TpAni
 	
