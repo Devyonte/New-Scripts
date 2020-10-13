@@ -147,17 +147,15 @@ function Library:Main(title, kbind)
 	end
 
 	dragify(Top)
-	
-	local KeyBind = false
 
-    local player = game.Players.LocalPlayer
-    local mouse = player:GetMouse()
+    	local player = game.Players.LocalPlayer
+   	local mouse = player:GetMouse()
     
-    mouse.KeyDown:connect(function(key)
-        if key == kbind then
-            Top.Visible = not Top.Visible
-        end
-    end)
+   	 mouse.KeyDown:connect(function(key)
+        	if key == kbind then
+            	Top.Visible = not Top.Visible
+        	end
+   	 end)
 	
 	local TabHolded = {}
 	
