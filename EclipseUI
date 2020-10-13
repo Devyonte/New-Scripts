@@ -592,7 +592,7 @@ function Library:Main(title)
 			BoxName.Position = UDim2.new(0, 0, 0.0340734869, 0)
 			BoxName.Size = UDim2.new(0, 364, 0, 22)
 			BoxName.Font = Enum.Font.SourceSansSemibold
-			BoxName.Text = "Box"
+			BoxName.Text = name
 			BoxName.TextColor3 = Color3.fromRGB(100, 100, 100)
 			BoxName.TextScaled = true
 			BoxName.TextSize = 14.000
@@ -611,6 +611,7 @@ function Library:Main(title)
 						wait()
 					end
 				end
+				callback(Box.Text)
 			end)
 		end
 		
