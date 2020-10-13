@@ -6,7 +6,7 @@ end
 
 local Library = {TabCount = 0}
 
-function Library:Main(title)
+function Library:Main(title, kbind)
 	local EclipseUI = Instance.new("ScreenGui")
 	local Top = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
@@ -147,6 +147,17 @@ function Library:Main(title)
 	end
 
 	dragify(Top)
+	
+	local KeyBind = false
+
+    local player = game.Players.LocalPlayer
+    local mouse = player:GetMouse()
+    
+    mouse.KeyDown:connect(function(key)
+        if key == kbind then
+            Top.Visible = not Top.Visible
+        end
+    end)
 	
 	local TabHolded = {}
 	
