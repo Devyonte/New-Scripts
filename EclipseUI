@@ -197,6 +197,7 @@ function Library:Main(title)
 		Hub.CanvasSize = UDim2.new(0, 0, 4, 0)
 		Hub.ScrollBarThickness = 0
 		Hub.TopImage = ""
+		Hub.Visible = Library.TabCount == 0 and true or false
 
 		UIListLayout_2.Parent = Hub
 		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -331,6 +332,7 @@ function Library:Main(title)
 					IsToggled = false
 					game:GetService("TweenService"):Create(ToggleIcon, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}):Play()
 				end
+				callback(IsToggled)
 			end)
 		end
 		
@@ -366,7 +368,7 @@ function Library:Main(title)
 			SliderName.Position = UDim2.new(0, 0, 0.0400000066, 0)
 			SliderName.Size = UDim2.new(0, 315, 0, 22)
 			SliderName.Font = Enum.Font.SourceSansSemibold
-			SliderName.Text = tostring(start)
+			SliderName.Text = "Slider"
 			SliderName.TextColor3 = Color3.fromRGB(255, 255, 255)
 			SliderName.TextScaled = true
 			SliderName.TextSize = 14.000
@@ -496,7 +498,7 @@ function Library:Main(title)
 			DropArrow.MouseButton1Click:Connect(function()
 				if DropHubBack.Size == UDim2.new(0, 364,0, 0) then
 					DropHubBack.Visible = true
-					DropHubBack:TweenSize(UDim2.new(0, 364,0, 85), "InOut", "Sine", 0.2, true)
+					DropHubBack:TweenSize(UDim2.new(0, 364,0, 90), "InOut", "Sine", 0.2, true)
 					game:GetService("TweenService"):Create(DropArrow, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation = 0}):Play();
 				else
 					DropHubBack:TweenSize(UDim2.new(0, 364,0, 0), "InOut", "Sine", 0.2, true)
@@ -553,7 +555,7 @@ function Library:Main(title)
 				end)
 
 				DropButton.MouseButton1Click:Connect(function()
-					if DropHubBack.Size == UDim2.new(0, 364,0, 85) then
+					if DropHubBack.Size == UDim2.new(0, 364,0, 90) then
 						DropHubBack:TweenSize(UDim2.new(0, 364,0, 0), "InOut", "Sine", 0.2, true)
 						game:GetService("TweenService"):Create(DropArrow, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation = 90}):Play();
 						wait(.2)
