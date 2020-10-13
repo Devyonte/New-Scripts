@@ -381,7 +381,7 @@ function Library:Main(title)
 			SliderValue.Position = UDim2.new(0.865384638, 0, 0, 0)
 			SliderValue.Size = UDim2.new(0, 47, 0, 25)
 			SliderValue.Font = Enum.Font.Highway
-			SliderValue.Text = "0/100"
+			SliderValue.Text = tostring(start .. "/" .. max)
 			SliderValue.TextColor3 = Color3.fromRGB(255, 255, 255)
 			SliderValue.TextScaled = true
 			SliderValue.TextSize = 14.000
