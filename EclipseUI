@@ -305,7 +305,7 @@ function Library:Main(title, kbind)
 			ToggleName.Size = UDim2.new(0, 337, 0, 22)
 			ToggleName.ZIndex = 2
 			ToggleName.Font = Enum.Font.SourceSansSemibold
-			ToggleName.Text = "Toggle"
+			ToggleName.Text = name
 			ToggleName.TextColor3 = Color3.fromRGB(255, 255, 255)
 			ToggleName.TextScaled = true
 			ToggleName.TextSize = 14.000
