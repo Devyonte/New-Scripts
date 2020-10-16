@@ -551,10 +551,6 @@ function Library:Main(title, kbind)
 				DropButtonName.TextSize = 14.000
 				DropButtonName.TextWrapped = true
 				
-				DropButton.MouseButton1Click:Connect(function()
-					callback(v)
-				end)
-				
 				DropButton.MouseButton1Down:Connect(function()
 					game:GetService("TweenService"):Create(DropButton, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(255, 129, 3)}):Play()
 				end)
@@ -564,6 +560,7 @@ function Library:Main(title, kbind)
 				end)
 
 				DropButton.MouseButton1Click:Connect(function()
+					callback(v)
 					if DropHubBack.Size == UDim2.new(0, 364,0, 122) then
 						DropHubBack:TweenSize(UDim2.new(0, 364,0, 0), "InOut", "Sine", 0.2, true)
 						game:GetService("TweenService"):Create(DropArrow, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation = 90}):Play();
