@@ -564,7 +564,7 @@ function Library:Main(title, kbind)
 				end)
 
 				DropButton.MouseButton1Click:Connect(function()
-					if DropHubBack.Size == UDim2.new(0, 364,0, 90) then
+					if DropHubBack.Size == UDim2.new(0, 364,0, 122) then
 						DropHubBack:TweenSize(UDim2.new(0, 364,0, 0), "InOut", "Sine", 0.2, true)
 						game:GetService("TweenService"):Create(DropArrow, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation = 90}):Play();
 						wait(.2)
