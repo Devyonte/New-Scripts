@@ -566,6 +566,7 @@ function Library:Main(title, kbind)
 						game:GetService("TweenService"):Create(DropArrow, TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation = 90}):Play();
 						wait(.2)
 						DropHubBack.Visible = false
+						DropName.Text = DropButtonName.Text
 					end
 				end)
 			Library.OptionCount = Library.OptionCount + 1
