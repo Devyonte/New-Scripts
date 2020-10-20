@@ -570,7 +570,9 @@ function Library:Main(title, kbind)
 					end
 				end)
 			Library.OptionCount = Library.OptionCount + 1
-			DropHub.CanvasSize = UDim2.new(0, 0, Library.OptionCount, 0)
+			if Library.OptionCount >= 3 then
+				DropHub.CanvasSize = UDim2.new(0, 0, Library.OptionCount, 0)
+				end
 			end
 		end
 		
