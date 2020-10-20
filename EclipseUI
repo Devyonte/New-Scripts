@@ -51,7 +51,7 @@ function Library:Main(title, kbind)
 	TabHolder.Position = UDim2.new(0, 0, 0.0548523217, 0)
 	TabHolder.Size = UDim2.new(0, 131, 0, 224)
 	TabHolder.ScrollBarThickness = 0
-	TabHolder.CanvasSize = Udim2.new(0, 0, 1, 0)
+	TabHolder.CanvasSize = UDim2.new(0, 0, 1, 0)
 
 	UIListLayout.Parent = TabHolder
 	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
