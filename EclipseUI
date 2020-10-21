@@ -148,15 +148,30 @@ function Library:Main(title, kbind)
 	end
 
 	dragify(Top)
+	
+	local KActive = false
+	
+	function onKeyPress(inputObject, gameProcessedEvent)
+		if inputObject.KeyCode == Enum.KeyCode.kbind then
+			if KActive = true then
+				KActive = false
+			else
+				KActive = true
+			end
+		end
+	end
 
-    	local player = game.Players.LocalPlayer
-   	local mouse = player:GetMouse()
-    
-   	 mouse.KeyDown:connect(function(key)
-        	if key == kbind then
-            	Top.Visible = not Top.Visible
-        	end
-   	 end)
+	game:GetService("UserInputService").InputBegan:connect(onKeyPress)
+	
+	spawn(function()
+		while wait() do
+			if KActive == true then
+				Top:TweenPosition(Udim2.new(0, Top.X.Postion, 0, Top.Y.Position - 100), "InOut", "Quad", 0.2, true)
+			else
+				Top:TweenPosition(Udim2.new(0, Top.X.Postion, 0, Top.Y.Position + 100), "InOut", "Quad", 0.2, true)
+			end
+		end
+	end)
 	
 	local TabHolded = {}
 	
