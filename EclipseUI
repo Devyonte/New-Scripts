@@ -150,7 +150,7 @@ function Library:Main(title, kbind)
 	dragify(Top)
 	
 	function onKeyPress(inputObject, gameProcessedEvent)
-		if inputObject.KeyCode == Enum.KeyCode.kbind then
+		if inputObject.KeyCode == kbind then
 			if Top.Visible == false then
 				Top.Visible = true
 			else
