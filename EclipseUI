@@ -149,17 +149,14 @@ function Library:Main(title, kbind)
 
 	dragify(Top)
 	
-	function onKeyPress(inputObject, gameProcessedEvent)
-		if inputObject.KeyCode == kbind then
-			if Top.Visible == false then
-				Top.Visible = true
-			else
-				Top.Visible = false
-				end
-			end
-		end
+	local player = game.Players.LocalPlayer
+    local mouse = player:GetMouse()
+	mouse.KeyDown:connect(function(key)
+	    if key == kbind  then
+	        Top.Visible = not Top.Visible
+	    end
+	end)
 
-	game:GetService("UserInputService").InputBegan:connect(onKeyPress)
 	
 	local TabHolded = {}
 	
