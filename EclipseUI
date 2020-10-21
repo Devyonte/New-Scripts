@@ -149,29 +149,17 @@ function Library:Main(title, kbind)
 
 	dragify(Top)
 	
-	local KActive = false
-	
 	function onKeyPress(inputObject, gameProcessedEvent)
 		if inputObject.KeyCode == Enum.KeyCode.kbind then
-			if KActive = true then
-				KActive = false
+			if Top.Visible == false then
+				Top.Visible = true
 			else
-				KActive = true
+				Top.Visible = false
+				end
 			end
 		end
-	end
 
 	game:GetService("UserInputService").InputBegan:connect(onKeyPress)
-	
-	spawn(function()
-		while wait() do
-			if KActive == true then
-				Top:TweenPosition(Udim2.new(0, Top.X.Postion, 0, Top.Y.Position - 100), "InOut", "Quad", 0.2, true)
-			else
-				Top:TweenPosition(Udim2.new(0, Top.X.Postion, 0, Top.Y.Position + 100), "InOut", "Quad", 0.2, true)
-			end
-		end
-	end)
 	
 	local TabHolded = {}
 	
