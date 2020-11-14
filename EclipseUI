@@ -379,7 +379,7 @@ function Library:Main(title, kbind)
 			SliderName.Position = UDim2.new(0, 0, 0.0400000066, 0)
 			SliderName.Size = UDim2.new(0, 315, 0, 22)
 			SliderName.Font = Enum.Font.SourceSansSemibold
-			SliderName.Text = "Slider"
+			SliderName.Text = name
 			SliderName.TextColor3 = Color3.fromRGB(255, 255, 255)
 			SliderName.TextScaled = true
 			SliderName.TextSize = 14.000
