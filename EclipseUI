@@ -354,6 +354,7 @@ function Library:Main(title, kbind)
 			local UICorner_11 = Instance.new("UICorner")
 			local SliderName = Instance.new("TextLabel")
 			local SliderValue = Instance.new("TextLabel")
+			local Dragging = false
 			
 			SliderBack.Name = "SliderBack"
 			SliderBack.Parent = Hub
