@@ -1,5 +1,5 @@
 for _, v in pairs(game.CoreGui:GetChildren()) do
-	if v.Name == "EclipseUI" then
+	if v.Name == "BananaUI" then
 		v:Destroy()
 	end
 end
@@ -19,11 +19,11 @@ function Library:Main(title, kbind)
 	local Title = Instance.new("TextLabel")
 	local Minimize = Instance.new("ImageButton")
 
-	EclipseUI.Name = "EclipseUI"
-	EclipseUI.Parent = game.CoreGui
+	BananaUI.Name = "BananaUI"
+	BananaUI.Parent = game.CoreGui
 
 	Top.Name = "Top"
-	Top.Parent = EclipseUI
+	Top.Parent = BananaUI
 	Top.Active = true
 	Top.AnchorPoint = Vector2.new(0.5, 0.5)
 	Top.BackgroundColor3 = Color3.fromRGB(230, 255, 0)
