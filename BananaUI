@@ -26,7 +26,7 @@ function Library:Main(title, kbind)
 	Top.Parent = BananaUI
 	Top.Active = true
 	Top.AnchorPoint = Vector2.new(0.5, 0.5)
-	Top.BackgroundColor3 = Color3.fromRGB(230, 255, 0)
+	Top.BackgroundColor3 = Color3.fromRGB(255, 200, 0)
 	Top.Position = UDim2.new(0.5, 0, 0.358816326, 0)
 	Top.Size = UDim2.new(0, 517, 0, 28)
 	Top.ZIndex = 2
@@ -270,7 +270,7 @@ function Library:Main(title, kbind)
 			ButtonName.TextWrapped = true
 
 			Button.MouseButton1Down:Connect(function()
-				game:GetService("TweenService"):Create(Button, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(230, 255, 0)}):Play()
+				game:GetService("TweenService"):Create(Button, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(255, 200, 0)}):Play()
 			end)
 
 			Button.MouseButton1Up:Connect(function()
@@ -338,7 +338,7 @@ function Library:Main(title, kbind)
 			Toggle.MouseButton1Click:Connect(function()
 				if IsToggled == false then
 					IsToggled = true
-					game:GetService("TweenService"):Create(ToggleIcon, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(230, 255, 0)}):Play()
+					game:GetService("TweenService"):Create(ToggleIcon, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(255, 200, 0)}):Play()
 				else
 					IsToggled = false
 					game:GetService("TweenService"):Create(ToggleIcon, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}):Play()
@@ -367,7 +367,7 @@ function Library:Main(title, kbind)
 
 			Slider.Name = "Slider"
 			Slider.Parent = SliderBack
-			Slider.BackgroundColor3 = Color3.fromRGB(230, 255, 0)
+			Slider.BackgroundColor3 = Color3.fromRGB(255, 200, 0)
 			Slider.Size = UDim2.new(0, 60, 0, 25)
 
 			UICorner_11.CornerRadius = UDim.new(0, 3)
@@ -555,7 +555,7 @@ function Library:Main(title, kbind)
 				DropButtonName.TextWrapped = true
 				
 				DropButton.MouseButton1Down:Connect(function()
-					game:GetService("TweenService"):Create(DropButton, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(230, 255, 0)}):Play()
+					game:GetService("TweenService"):Create(DropButton, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(255, 200, 0)}):Play()
 				end)
 
 				DropButton.MouseButton1Up:Connect(function()
