@@ -334,17 +334,16 @@ function Library:Main(title, kbind)
 			Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
 			Toggle.TextSize = 14.000
 			
-			local IsToggled = false
+			local toggle = false
 			Toggle.MouseButton1Click:Connect(function()
-				if IsToggled == false then
-					IsToggled = true
-					game:GetService("TweenService"):Create(ToggleIcon, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(255, 200, 0)}):Play()
-				else
-					IsToggled = false
-					game:GetService("TweenService"):Create(ToggleIcon, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}):Play()
-				end
-				callback(IsToggled)
-			end)
+ 				toggle = not toggle
+    					if toggle then 
+        					game:GetService("TweenService"):Create(ToggleIcon, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(255, 200, 0)}):Play()
+   					elseif (not toggle) then 
+        					game:GetService("TweenService"):Create(ToggleIcon, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(40, 40, 40)}):Play()
+    					end
+    					callback(toggle)
+				end)
 		end
 		
 		function Lib:Slider(name, min, max, start, callback)
