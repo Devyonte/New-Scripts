@@ -52,6 +52,8 @@ function Library:Main(title, kbind)
 	TabHolder.Size = UDim2.new(0, 131, 0, 224)
 	TabHolder.ScrollBarThickness = 0
 	TabHolder.CanvasSize = UDim2.new(0, 0, 1, 0)
+	
+	TabHolder.CanvasSize = UDim2.new(0, 0, 0, UIListLayout.AbsoluteContentSize.Y)
 
 	UIListLayout.Parent = TabHolder
 	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -209,8 +211,6 @@ function Library:Main(title, kbind)
 		Hub.ScrollBarThickness = 0
 		Hub.TopImage = ""
 		Hub.Visible = Library.TabCount == 0 and true or false
-		
-		Hub.CanvasSize = UDim2.new(0, 0, 0, UIListLayout_2.AbsoluteContentSize.Y)
 
 		UIListLayout_2.Parent = Hub
 		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
