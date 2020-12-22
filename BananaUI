@@ -52,6 +52,8 @@ function Library:Main(title, kbind)
 	TabHolder.Size = UDim2.new(0, 131, 0, 224)
 	TabHolder.ScrollBarThickness = 0
 	TabHolder.CanvasSize = UDim2.new(0, 0, 1, 0)
+	
+	TabHolder.CanvasSize = UDim2.new(0, 0, 0, UIListLayout.AbsoluteContentSize.Y)
 
 	UIListLayout.Parent = TabHolder
 	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -62,7 +64,7 @@ function Library:Main(title, kbind)
 	HubHolder.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 	HubHolder.Position = UDim2.new(0.257253379, 0, 0.0548523217, 0)
 	HubHolder.Size = UDim2.new(0, 377, 0, 216)
-
+	
 	UICorner_3.CornerRadius = UDim.new(0, 2)
 	UICorner_3.Parent = HubHolder
 
@@ -151,7 +153,7 @@ function Library:Main(title, kbind)
 	dragify(Top)
 	
 	local player = game.Players.LocalPlayer
-    local mouse = player:GetMouse()
+    	local mouse = player:GetMouse()
 	mouse.KeyDown:connect(function(key)
 	    if key == kbind  then
 	        Top.Visible = not Top.Visible
@@ -209,6 +211,8 @@ function Library:Main(title, kbind)
 		Hub.ScrollBarThickness = 0
 		Hub.TopImage = ""
 		Hub.Visible = Library.TabCount == 0 and true or false
+		
+		Hub.CanvasSize = UDim2.new(0, 0, 0, UIListLayout_2.AbsoluteContentSize.Y)
 
 		UIListLayout_2.Parent = Hub
 		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -507,6 +511,7 @@ function Library:Main(title, kbind)
 			DropArrow.ImageRectSize = Vector2.new(36, 36)
 
 			DropArrow.MouseButton1Click:Connect(function()
+			DropHub.CanvasSize = UDim2.new(0, 0, 0, UIListLayout_3.AbsoluteContentSize.Y)
 				if DropHubBack.Size == UDim2.new(0, 364,0, 0) then
 					DropHubBack.Visible = true
 					DropHubBack:TweenSize(UDim2.new(0, 364,0, 122), "InOut", "Sine", 0.2, true)
