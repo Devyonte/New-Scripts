@@ -1,0 +1,520 @@
+for _, v in pairs(game.CoreGui:GetChildren()) do
+	if v.Name == "BossUI" then
+		v:Destroy()
+	end
+end
+
+repeat wait(1) until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+
+local BossUI = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local shadowHolder = Instance.new("Frame")
+local umbraShadow = Instance.new("ImageLabel")
+local penumbraShadow = Instance.new("ImageLabel")
+local Exit = Instance.new("ImageButton")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+local Status = Instance.new("TextLabel")
+local Status2 = Instance.new("TextLabel")
+local BossHolder = Instance.new("ScrollingFrame")
+local BossButton = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local On = Instance.new("ImageButton")
+local Off = Instance.new("ImageButton")
+local UIListLayout = Instance.new("UIListLayout")
+    
+local BossButton2 = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local Title2 = Instance.new("TextLabel")
+local On2 = Instance.new("ImageButton")
+local Off2 = Instance.new("ImageButton")
+    
+local BossButton3 = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local Title3 = Instance.new("TextLabel")
+local On3 = Instance.new("ImageButton")
+local Off3 = Instance.new("ImageButton")
+    
+local AutoBoss = false
+local ElementFarm = nil
+    
+BossUI.Name = "UI"
+BossUI.Parent = game.CoreGui
+    
+Main.Name = "Main"
+Main.Parent = BossUI
+Main.BackgroundColor3 = Color3.fromRGB(41, 47, 53)
+Main.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.383487672, 0, 0.390184045, 0)
+Main.Size = UDim2.new(0, 301, 0, 179)
+Main.ZIndex = 2
+    
+UICorner.CornerRadius = UDim.new(0, 6)
+UICorner.Parent = Main
+    
+shadowHolder.Name = "shadowHolder"
+shadowHolder.Parent = Main
+shadowHolder.BackgroundTransparency = 1.000
+shadowHolder.Size = UDim2.new(1, 0, 1, 0)
+shadowHolder.ZIndex = 0
+    
+umbraShadow.Name = "umbraShadow"
+umbraShadow.Parent = shadowHolder
+umbraShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+umbraShadow.BackgroundTransparency = 1.000
+umbraShadow.Position = UDim2.new(0.503000021, 0, 0.503000021, 2)
+umbraShadow.Size = UDim2.new(1.00996673, 4, 1.00558639, 4)
+umbraShadow.ZIndex = 0
+umbraShadow.Image = "rbxassetid://1316045217"
+umbraShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+umbraShadow.ImageTransparency = 0.500
+umbraShadow.ScaleType = Enum.ScaleType.Slice
+umbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+    
+penumbraShadow.Name = "penumbraShadow"
+penumbraShadow.Parent = shadowHolder
+penumbraShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+penumbraShadow.BackgroundTransparency = 1.000
+penumbraShadow.Position = UDim2.new(0.503322244, 0, 0.502793133, 2)
+penumbraShadow.Size = UDim2.new(1.01993358, 4, 1.03910625, 4)
+penumbraShadow.ZIndex = 0
+penumbraShadow.Image = "rbxassetid://1316045217"
+penumbraShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+penumbraShadow.ImageTransparency = 0.500
+penumbraShadow.ScaleType = Enum.ScaleType.Slice
+penumbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+    
+Exit.Name = "Exit"
+Exit.Parent = Main
+Exit.BackgroundTransparency = 1.000
+Exit.LayoutOrder = 5
+Exit.Position = UDim2.new(0.910000026, 0, 0.0299999993, 0)
+Exit.Size = UDim2.new(0, 21, 0, 21)
+Exit.ZIndex = 2
+Exit.Image = "rbxassetid://3926305904"
+Exit.ImageRectOffset = Vector2.new(924, 724)
+Exit.ImageRectSize = Vector2.new(36, 36)
+    
+BossHolder.Name = "BossHolder"
+BossHolder.Parent = Main
+BossHolder.Active = true
+BossHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BossHolder.BackgroundTransparency = 1.000
+BossHolder.BorderSizePixel = 0
+BossHolder.Position = UDim2.new(0.0465116277, 0, 0.201117322, 0)
+BossHolder.Size = UDim2.new(0, 272, 0, 129)
+BossHolder.ZIndex = 2
+BossHolder.BottomImage = ""
+BossHolder.ScrollBarThickness = 0
+BossHolder.TopImage = ""
+    
+Status.Name = "Status"
+Status.Parent = Main
+Status.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Status.BackgroundTransparency = 1.000
+Status.BorderSizePixel = 0
+Status.Position = UDim2.new(0.0465116277, 0, 0.0279329605, 0)
+Status.Size = UDim2.new(0, 56, 0, 21)
+Status.ZIndex = 2
+Status.Font = Enum.Font.SourceSansSemibold
+Status.Text = "Status: "
+Status.TextColor3 = Color3.fromRGB(226, 226, 226)
+Status.TextScaled = true
+Status.TextSize = 14.000
+Status.TextWrapped = true
+Status.TextXAlignment = Enum.TextXAlignment.Left
+        
+Status2.Name = "Status2"
+Status2.Parent = Main
+Status2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Status2.BackgroundTransparency = 1.000
+Status2.BorderSizePixel = 0
+Status2.Position = UDim2.new(0.252491683, 0, 0.0279329605, 0)
+Status2.Size = UDim2.new(0, 197, 0, 21)
+Status2.ZIndex = 2
+Status2.Font = Enum.Font.SourceSansSemibold
+Status2.Text = "Waiting..."
+Status2.TextColor3 = Color3.fromRGB(0, 170, 255)
+Status2.TextScaled = true
+Status2.TextSize = 14.000
+Status2.TextWrapped = true
+Status2.TextXAlignment = Enum.TextXAlignment.Left
+        
+UIAspectRatioConstraint.Parent = Exit
+    
+UIAspectRatioConstraint_2.Parent = Main
+UIAspectRatioConstraint_2.AspectRatio = 1.682
+    
+Exit.MouseButton1Click:Connect(function()
+	game:GetService("TweenService"):Create(Exit, TweenInfo.new(.3), {ImageColor3 = Color3.fromRGB(255, 0, 81)}):Play()
+    wait(.5)
+    Exit.Visible = false
+    BossHolder.Visible = false
+    Status.Visible = false
+    Status2.Visible = false
+    Main:TweenSize(UDim2.new(0, .383, 0, 0), "InOut", "Sine", .3, false)
+    wait(.3)
+	Main:Destroy()
+end)
+    
+UIListLayout.Parent = BossHolder
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 5)
+    
+-- Button
+    
+BossButton.Name = "BossButton"
+BossButton.Parent = BossHolder
+BossButton.BackgroundColor3 = Color3.fromRGB(38, 43, 49)
+BossButton.Size = UDim2.new(0, 271, 0, 32)
+BossButton.ZIndex = 2
+BossButton.AutoButtonColor = false
+BossButton.Font = Enum.Font.SourceSans
+BossButton.Text = ""
+BossButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+BossButton.TextSize = 20.000
+BossButton.TextWrapped = true
+BossButton.TextXAlignment = Enum.TextXAlignment.Left
+        
+UICorner_2.CornerRadius = UDim.new(0, 6)
+UICorner_2.Parent = BossButton
+        
+Title.Name = "Title"
+Title.Parent = BossButton
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.0479704812, 0, 0.09375, 0)
+Title.Size = UDim2.new(0, 213, 0, 25)
+Title.ZIndex = 2
+Title.Font = Enum.Font.SourceSansSemibold
+Title.Text = "Water"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+Title.TextXAlignment = Enum.TextXAlignment.Left
+        
+On.Name = "On"
+On.Parent = BossButton
+On.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+On.BackgroundTransparency = 1.000
+On.BorderSizePixel = 0
+On.LayoutOrder = 5
+On.Position = UDim2.new(0.879999995, 0, 0.0939999968, 0)
+On.Size = UDim2.new(0, 25, 0, 25)
+On.ZIndex = 2
+On.AutoButtonColor = false
+On.Image = "rbxassetid://3926305904"
+On.ImageColor3 = Color3.fromRGB(85, 255, 127)
+On.ImageRectOffset = Vector2.new(312, 4)
+On.ImageRectSize = Vector2.new(24, 24)
+On.ImageTransparency = 1.000
+        
+Off.Name = "Off"
+Off.Parent = BossButton
+Off.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Off.BackgroundTransparency = 1.000
+Off.BorderSizePixel = 0
+Off.LayoutOrder = 5
+Off.Position = UDim2.new(0.879999995, 0, 0.0939999968, 0)
+Off.Size = UDim2.new(0, 25, 0, 25)
+Off.ZIndex = 2
+Off.AutoButtonColor = false
+Off.Image = "rbxassetid://3926305904"
+Off.ImageColor3 = Color3.fromRGB(255, 0, 68)
+Off.ImageRectOffset = Vector2.new(924, 724)
+Off.ImageRectSize = Vector2.new(36, 36)
+        
+local toggle = false
+        
+On.MouseButton1Click:Connect(function()
+    toggle = not toggle
+	game:GetService("TweenService"):Create(On, TweenInfo.new(.3), {ImageTransparency = 1}):Play()
+	wait(.1)
+	game:GetService("TweenService"):Create(Off, TweenInfo.new(.3), {ImageTransparency = 0}):Play()
+	Off.ZIndex = 3
+	On.ZIndex = 2
+	AutoBoss = false
+	wait()
+	ElementFarm = nil
+end)
+        
+Off.MouseButton1Click:Connect(function()
+    toggle = not toggle
+   	game:GetService("TweenService"):Create(Off, TweenInfo.new(.3), {ImageTransparency = 1}):Play()
+	wait(.1)
+	game:GetService("TweenService"):Create(On, TweenInfo.new(.3), {ImageTransparency = 0}):Play()
+   	On.ZIndex = 3
+   	Off.ZIndex = 2
+   	AutoBoss = true
+   	ElementFarm = "Water"
+end)
+    
+-- Button 2
+
+BossButton2.Name = "BossButton"
+BossButton2.Parent = BossHolder
+BossButton2.BackgroundColor3 = Color3.fromRGB(38, 43, 49)
+BossButton2.Size = UDim2.new(0, 271, 0, 32)
+BossButton2.ZIndex = 2
+BossButton2.AutoButtonColor = false
+BossButton2.Font = Enum.Font.SourceSans
+BossButton2.Text = ""
+BossButton2.TextColor3 = Color3.fromRGB(255, 255, 255)
+BossButton2.TextSize = 20.000
+BossButton2.TextWrapped = true
+BossButton2.TextXAlignment = Enum.TextXAlignment.Left
+        
+UICorner_3.CornerRadius = UDim.new(0, 6)
+UICorner_3.Parent = BossButton2
+        
+Title2.Name = "Title"
+Title2.Parent = BossButton2
+Title2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title2.BackgroundTransparency = 1.000
+Title2.BorderSizePixel = 0
+Title2.Position = UDim2.new(0.0479704812, 0, 0.09375, 0)
+Title2.Size = UDim2.new(0, 213, 0, 25)
+Title2.ZIndex = 2
+Title2.Font = Enum.Font.SourceSansSemibold
+Title2.Text = "Fire"
+Title2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title2.TextScaled = true
+Title2.TextSize = 14.000
+Title2.TextWrapped = true
+Title2.TextXAlignment = Enum.TextXAlignment.Left
+        
+On2.Name = "On"
+On2.Parent = BossButton2
+On2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+On2.BackgroundTransparency = 1.000
+On2.BorderSizePixel = 0
+On2.LayoutOrder = 5
+On2.Position = UDim2.new(0.879999995, 0, 0.0939999968, 0)
+On2.Size = UDim2.new(0, 25, 0, 25)
+On2.ZIndex = 2
+On2.AutoButtonColor = false
+On2.Image = "rbxassetid://3926305904"
+On2.ImageColor3 = Color3.fromRGB(85, 255, 127)
+On2.ImageRectOffset = Vector2.new(312, 4)
+On2.ImageRectSize = Vector2.new(24, 24)
+On2.ImageTransparency = 1.000
+        
+Off2.Name = "Off"
+Off2.Parent = BossButton2
+Off2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Off2.BackgroundTransparency = 1.000
+Off2.BorderSizePixel = 0
+Off2.LayoutOrder = 5
+Off2.Position = UDim2.new(0.879999995, 0, 0.0939999968, 0)
+Off2.Size = UDim2.new(0, 25, 0, 25)
+Off2.ZIndex = 2
+Off2.AutoButtonColor = false
+Off2.Image = "rbxassetid://3926305904"
+Off2.ImageColor3 = Color3.fromRGB(255, 0, 68)
+Off2.ImageRectOffset = Vector2.new(924, 724)
+Off2.ImageRectSize = Vector2.new(36, 36)
+        
+local toggle2 = false
+        
+On2.MouseButton1Click:Connect(function()
+    toggle2 = not toggle2
+	game:GetService("TweenService"):Create(On2, TweenInfo.new(.3), {ImageTransparency = 1}):Play()
+	wait(.1)
+	game:GetService("TweenService"):Create(Off2, TweenInfo.new(.3), {ImageTransparency = 0}):Play()
+	Off2.ZIndex = 3
+	On2.ZIndex = 2
+	AutoBoss = false
+	wait()
+	ElementFarm = nil
+end)
+        
+Off2.MouseButton1Click:Connect(function()
+    toggle2 = not toggle2
+   	game:GetService("TweenService"):Create(Off2, TweenInfo.new(.3), {ImageTransparency = 1}):Play()
+   	wait(.1)
+	game:GetService("TweenService"):Create(On2, TweenInfo.new(.3), {ImageTransparency = 0}):Play()
+   	On2.ZIndex = 3
+   	Off2.ZIndex = 2
+   	AutoBoss = true
+   	ElementFarm = "Fire"
+end)
+   
+-- Button 3
+    
+BossButton3.Name = "BossButton"
+BossButton3.Parent = BossHolder
+BossButton3.BackgroundColor3 = Color3.fromRGB(38, 43, 49)
+BossButton3.Size = UDim2.new(0, 271, 0, 32)
+BossButton3.ZIndex = 2
+BossButton3.AutoButtonColor = false
+BossButton3.Font = Enum.Font.SourceSans
+BossButton3.Text = ""
+BossButton3.TextColor3 = Color3.fromRGB(255, 255, 255)
+BossButton3.TextSize = 20.000
+BossButton3.TextWrapped = true
+BossButton3.TextXAlignment = Enum.TextXAlignment.Left
+        
+UICorner_4.CornerRadius = UDim.new(0, 6)
+UICorner_4.Parent = BossButton3
+        
+Title3.Name = "Title"
+Title3.Parent = BossButton3
+Title3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title3.BackgroundTransparency = 1.000
+Title3.BorderSizePixel = 0
+Title3.Position = UDim2.new(0.0479704812, 0, 0.09375, 0)
+Title3.Size = UDim2.new(0, 213, 0, 25)
+Title3.ZIndex = 2
+Title3.Font = Enum.Font.SourceSansSemibold
+Title3.Text = "Earth"
+Title3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title3.TextScaled = true
+Title3.TextSize = 14.000
+Title3.TextWrapped = true
+Title3.TextXAlignment = Enum.TextXAlignment.Left
+        
+On3.Name = "On"
+On3.Parent = BossButton3
+On3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+On3.BackgroundTransparency = 1.000
+On3.BorderSizePixel = 0
+On3.LayoutOrder = 5
+On3.Position = UDim2.new(0.879999995, 0, 0.0939999968, 0)
+On3.Size = UDim2.new(0, 25, 0, 25)
+On3.ZIndex = 2
+On3.AutoButtonColor = false
+On3.Image = "rbxassetid://3926305904"
+On3.ImageColor3 = Color3.fromRGB(85, 255, 127)
+On3.ImageRectOffset = Vector2.new(312, 4)
+On3.ImageRectSize = Vector2.new(24, 24)
+On3.ImageTransparency = 1.000
+        
+Off3.Name = "Off"
+Off3.Parent = BossButton3
+Off3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Off3.BackgroundTransparency = 1.000
+Off3.BorderSizePixel = 0
+Off3.LayoutOrder = 5
+Off3.Position = UDim2.new(0.879999995, 0, 0.0939999968, 0)
+Off3.Size = UDim2.new(0, 25, 0, 25)
+Off3.ZIndex = 2
+Off3.AutoButtonColor = false
+Off3.Image = "rbxassetid://3926305904"
+Off3.ImageColor3 = Color3.fromRGB(255, 0, 68)
+Off3.ImageRectOffset = Vector2.new(924, 724)
+Off3.ImageRectSize = Vector2.new(36, 36)
+        
+local toggle3 = false
+        
+On3.MouseButton1Click:Connect(function()
+    toggle3 = not toggle3
+	game:GetService("TweenService"):Create(On3, TweenInfo.new(.3), {ImageTransparency = 1}):Play()
+	wait(.1)
+	game:GetService("TweenService"):Create(Off3, TweenInfo.new(.3), {ImageTransparency = 0}):Play()
+	Off3.ZIndex = 3
+	On3.ZIndex = 2
+	AutoBoss = false
+	wait()
+	ElementFarm = nil
+end)
+        
+Off3.MouseButton1Click:Connect(function()
+    toggle3 = not toggle3
+   	game:GetService("TweenService"):Create(Off3, TweenInfo.new(.3), {ImageTransparency = 1}):Play()
+	wait(.1)
+	game:GetService("TweenService"):Create(On3, TweenInfo.new(.3), {ImageTransparency = 0}):Play()
+   	On3.ZIndex = 3
+   	Off3.ZIndex = 2
+   	AutoBoss = true
+   	ElementFarm = "Earth"
+end)
+    
+function dragify(Frame)
+	dragToggle = nil
+	dragSpeed = nil 
+	dragInput = nil
+	dragStart = nil
+	dragPos = nil
+    
+	function updateInput(input)
+		Delta = input.Position - dragStart
+		Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+		game:GetService("TweenService"):Create(Frame, TweenInfo.new(.25), {Position = Position}):Play()
+	end
+    
+	Frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
+			dragToggle = true
+			dragStart = input.Position
+			startPos = Frame.Position
+			input.Changed:Connect(function()
+				if (input.UserInputState == Enum.UserInputState.End) then
+				    dragToggle = false
+			    end
+			end)
+		end
+	end)
+    
+	Frame.InputChanged:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+			dragInput = input
+    		end
+	end)
+    
+	game:GetService("UserInputService").InputChanged:Connect(function(input)
+		if (input == dragInput and dragToggle) then
+			updateInput(input)
+		end
+	end)
+end
+    
+dragify(Main)
+
+spawn(function()
+    while wait() do
+        if AutoBoss then
+        if game:GetService("Workspace").Mobs:FindFirstChild(ElementFarm.." Golem") ~= nil then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Mobs[ElementFarm.." Golem"].HumanoidRootPart.CFrame - Vector3.new(0, 4, 0)
+            Status2.Text = "Fighting "..ElementFarm.." Golem"
+        elseif game:GetService("Workspace").Mobs:FindFirstChild(ElementFarm.." Boss") ~= nil then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Mobs[ElementFarm.." Boss"].HumanoidRootPart.CFrame - Vector3.new(0, 5, 0)
+            Status2.Text = "Fighting "..ElementFarm.." Boss"
+        elseif game:GetService("Workspace").Mobs:FindFirstChild(ElementFarm.." Boss") == nil and game:GetService("Workspace").Mobs:FindFirstChild(ElementFarm.." Golem") == nil then
+            Status2.Text = "Waiting..."
+        end
+        local player = game.Players.LocalPlayer
+            if player.Character and player.Character.Humanoid.Health > 1 then
+            local Player = game:GetService("Players").LocalPlayer
+            if Player.Character:FindFirstChildOfClass("Tool") then 
+                local Tool = Player.Character:FindFirstChildOfClass("Tool")
+                Tool.RemoteClick:FireServer()
+            else
+                local Tool = Player.Backpack:FindFirstChildOfClass("Tool")
+                Tool.Parent = Player.Character
+            end
+            wait()
+            game:GetService("ReplicatedStorage").Events.UpdateData:InvokeServer()
+            wait()
+            game:GetService("ReplicatedStorage").Events.Clicked:FireServer()
+            wait()
+        end
+        game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+        else
+            Status2.Text = "Waiting..."
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        for i = 1,255 do
+        Status2.TextColor3 = Color3.fromHSV(i/255, 1, 1)
+        wait()
+    end
+    end
+end)
