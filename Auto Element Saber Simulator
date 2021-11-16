@@ -49,7 +49,7 @@ Main.BackgroundColor3 = Color3.fromRGB(41, 47, 53)
 Main.BorderColor3 = Color3.fromRGB(27, 42, 53)
 Main.BorderSizePixel = 0
 Main.Position = UDim2.new(0.383487672, 0, 0.390184045, 0)
-Main.Size = UDim2.new(0, 301, 0, 179)
+Main.Size = UDim2.new(0, 300, 0, 185)
 Main.ZIndex = 2
     
 UICorner.CornerRadius = UDim.new(0, 6)
@@ -105,7 +105,7 @@ BossHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 BossHolder.BackgroundTransparency = 1.000
 BossHolder.BorderSizePixel = 0
 BossHolder.Position = UDim2.new(0.0465116277, 0, 0.201117322, 0)
-BossHolder.Size = UDim2.new(0, 272, 0, 129)
+BossHolder.Size = UDim2.new(0, 272, 0, 135)
 BossHolder.ZIndex = 2
 BossHolder.BottomImage = ""
 BossHolder.ScrollBarThickness = 0
@@ -162,7 +162,7 @@ end)
     
 UIListLayout.Parent = BossHolder
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout.Padding = UDim.new(0, 5)
+UIListLayout.Padding = UDim.new(0, 8)
     
 -- Button
     
@@ -479,10 +479,10 @@ spawn(function()
     while wait() do
         if AutoBoss then
         if game:GetService("Workspace").Mobs:FindFirstChild(ElementFarm.." Golem") ~= nil then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Mobs[ElementFarm.." Golem"].HumanoidRootPart.CFrame - Vector3.new(0, 4, 0)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Mobs[ElementFarm.." Golem"].HumanoidRootPart.CFrame - Vector3.new(0, 8, 0)
             Status2.Text = "Fighting "..ElementFarm.." Golem"
         elseif game:GetService("Workspace").Mobs:FindFirstChild(ElementFarm.." Boss") ~= nil then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Mobs[ElementFarm.." Boss"].HumanoidRootPart.CFrame - Vector3.new(0, 5, 0)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Mobs[ElementFarm.." Boss"].HumanoidRootPart.CFrame - Vector3.new(0, 10, 0)
             Status2.Text = "Fighting "..ElementFarm.." Boss"
         elseif game:GetService("Workspace").Mobs:FindFirstChild(ElementFarm.." Boss") == nil and game:GetService("Workspace").Mobs:FindFirstChild(ElementFarm.." Golem") == nil then
             Status2.Text = "Waiting..."
@@ -497,9 +497,7 @@ spawn(function()
                 local Tool = Player.Backpack:FindFirstChildOfClass("Tool")
                 Tool.Parent = Player.Character
             end
-            wait()
             game:GetService("ReplicatedStorage").Events.UpdateData:InvokeServer()
-            wait()
             game:GetService("ReplicatedStorage").Events.Clicked:FireServer()
             wait()
         end
