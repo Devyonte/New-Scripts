@@ -116,7 +116,7 @@ Status.Parent = Main
 Status.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Status.BackgroundTransparency = 1.000
 Status.BorderSizePixel = 0
-Status.Position = UDim2.new(0.0465116277, 0, 0.0279329605, 0)
+Status.Position = UDim2.new(0.0465116277, 0, 0.026, 0)
 Status.Size = UDim2.new(0, 56, 0, 21)
 Status.ZIndex = 2
 Status.Font = Enum.Font.SourceSansSemibold
@@ -132,7 +132,7 @@ Status2.Parent = Main
 Status2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Status2.BackgroundTransparency = 1.000
 Status2.BorderSizePixel = 0
-Status2.Position = UDim2.new(0.252491683, 0, 0.0279329605, 0)
+Status2.Position = UDim2.new(0.252491683, 0, 0.026, 0)
 Status2.Size = UDim2.new(0, 197, 0, 21)
 Status2.ZIndex = 2
 Status2.Font = Enum.Font.SourceSansSemibold
@@ -500,8 +500,8 @@ spawn(function()
             game:GetService("ReplicatedStorage").Events.UpdateData:InvokeServer()
             game:GetService("ReplicatedStorage").Events.Clicked:FireServer()
             wait()
-        end
-        game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+            end
+            game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
         else
             Status2.Text = "Waiting..."
         end
