@@ -479,7 +479,7 @@ spawn(function()
     while wait() do
         if AutoBoss then
         if game:GetService("Workspace").Mobs:FindFirstChild(ElementFarm.." Golem") ~= nil then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Mobs[ElementFarm.." Golem"].HumanoidRootPart.CFrame - Vector3.new(0, 8, 0)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Mobs[ElementFarm.." Golem"].HumanoidRootPart.CFrame - Vector3.new(0, 7, 0)
             Status2.Text = "Fighting "..ElementFarm.." Golem"
         elseif game:GetService("Workspace").Mobs:FindFirstChild(ElementFarm.." Boss") ~= nil then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Mobs[ElementFarm.." Boss"].HumanoidRootPart.CFrame - Vector3.new(0, 10, 0)
@@ -501,7 +501,6 @@ spawn(function()
             game:GetService("ReplicatedStorage").Events.Clicked:FireServer()
             wait()
             end
-            game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
         else
             Status2.Text = "Waiting..."
         end
